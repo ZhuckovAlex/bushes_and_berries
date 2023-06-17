@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "wizardry_delight:block/yadoga0"
+    },
+    "age=1": {
+      "model": "wizardry_delight:block/yadoga1"
+    },
+    "age=2": {
+      "model": "wizardry_delight:block/yadoga2"
+    },
+    "age=3": {
+      "model": "wizardry_delight:block/yadoga3"
+    }
+  }
+}

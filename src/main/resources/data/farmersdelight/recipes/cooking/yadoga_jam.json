@@ -1,0 +1,32 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "container": {
+    "item": "wizardry_delight:jar"
+  },
+  "ingredients": [
+    {
+      "item": "wizardry_delight:yadoga"
+    },
+    {
+      "item": "wizardry_delight:yadoga"
+    },
+    {
+      "item": "wizardry_delight:yadoga"
+    },
+    {
+      "item": "wizardry_delight:sugar_refined"
+    },
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "wizardry_delight:sugar_refined"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "wizardry_delight:yadoga_jam"
+  }
+}

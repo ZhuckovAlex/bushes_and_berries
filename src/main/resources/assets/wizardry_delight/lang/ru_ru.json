@@ -1,0 +1,103 @@
+{
+  "block.wizardry_delight.apple_button": "Кнопка из яблони",
+  "block.wizardry_delight.apple_door": "Дверь из яблони",
+  "block.wizardry_delight.apple_log": "Бревно яблони",
+  "block.wizardry_delight.apple_planks": "Доски из яблони",
+  "block.wizardry_delight.apple_slab": "Плита из яблони",
+  "block.wizardry_delight.apple_stairs": "Ступеньки из яблони",
+  "block.wizardry_delight.apple_trapdoor": "Люк из яблони",
+  "block.wizardry_delight.apple_wood": "Древесина яблони",
+  "block.wizardry_delight.strange_chip": "Странные обломки",
+  "block.wizardry_delight.stripped_apple_log": "Обтёсанное бревно яблони",
+  "block.wizardry_delight.stripped_apple_wood": "Обтёсанная древесина яблони",
+  "item.wizardry_delight.apple_fence": "Забор из яблони",
+  "item.wizardry_delight.apple_fence_gate": "Калитка из яблони",
+  "item.wizardry_delight.apple_jam": "Яблочный джем",
+  "item.wizardry_delight.jar": "Банка",
+  "item.wizardry_delight.sugar_refined": "Сахар рафинад",
+  "item.wizardry_delight.apple_leaves": "Листва яблони",
+  "item.wizardry_delight.apple_pressure_plate": "Нажимная плита из яблони",
+  "item.wizardry_delight.apple_sapling": "Саженец яблони",
+  "item.wizardry_delight.black_berries": "Чарника",
+  "item.wizardry_delight.charnika_jam": "Чарничное варенье",
+  "item.wizardry_delight.yadoga": "Ядога",
+  "item.wizardry_delight.silveran": "Сильверан",
+  "item.wizardry_delight.healing_dew": "Целебная роса",
+  "item.wizardry_delight.a_drop_of_love": "Капля любви",
+  "item.wizardry_delight.yadoga_jam": "Варенье из ядоги",
+  "item.wizardry_delight.crimson_bone_meal": "Багровая костная мука",
+  "item.wizardry_delight.clear_dragolit_nugget": "Чистый драгонитовый осколок",
+  "effect.wizardry_delight.tasty_food": "Вкусная еда",
+  "effect.wizardry_delight.ender_no_look": "Эндер слепота",
+  "item.wizardry_delight.soul_stone": "Камень душ",
+  "item.wizardry_delight.fire_stem": "Огненный стержень",
+  "item.wizardry_delight.freeze_berries": "Морожка",
+  "item.wizardry_delight.freeze_jam": "Морожковый джем",
+  "item.wizardry_delight.glowing_jam": "Варенье из светящихся ягод",
+  "item.wizardry_delight.meadow_golden_flower": "Луговой златоцвет",
+  "item.wizardry_delight.shulker_elytra": "Драколитовые элитры",
+  "item.wizardry_delight.dragolit_ingot": "Драколитовый слиток",
+  "item.wizardry_delight.rose_of_ghosty_tears": "Роза призрачных слёз",
+  "item.wizardry_delight.spatial_orchid": "Пространственная орхидея",
+  "item.wizardry_delight.rose_of_the_murderer": "Поглотитель душ",
+  "item.wizardry_delight.strange_scrap": "Странный лом",
+  "item.wizardry_delight.sweet_jam": "Сладкое варенье",
+  "item.wizardry_delight.golden_chest_king_pillager": "§eЗолотой сундук разбойничего короля",
+  "item.wizardry_delight.sweet_roll": "Сладкий рулет",
+  "item.wizardry_delight.cheese": "Сыр",
+  "item.wizardry_delight.warped_bone_meal": "Искажённая костная мука",
+  "item.wizardry_delight.warped_wart": "Искажённый нарост",
+  "item.wizardry_delight.the_pillagers_chest": "Сундук разбойников",
+  "itemGroup.wizardry_delight": "Wizardry delight",
+
+  "advancements.adventures.a_drop_of_love.description": "С ним и перловка вкуснее!",
+  "advancements.adventures.a_drop_of_love.title": "Секретный ингредиент",
+
+  "advancements.adventures.meadow_golden_flower.description": "Не всё золото, что блестит",
+  "advancements.adventures.meadow_golden_flower.title": "Доктор Румпельштильцхен",
+
+  "advancements.adventures.healing_dew.description": "'Зомби не едят пончики, а пьют отвары!' - Эваторн Длиннобородый - целитель 1-го разряда, героийски погибший в обьятьях благодарного зараженного.",
+  "advancements.adventures.healing_dew.title": "Школа восстановление",
+
+  "advancements.adventures.sweet_roll.description": "На этот раз его никто не украдет",
+  "advancements.adventures.sweet_roll.title": "Это тот самый рулет?",
+
+  "advancements.adventures.crimson_bone_meal.description": "Пусть плодоносит незерак.",
+  "advancements.adventures.crimson_bone_meal.title": "Сомнительное удобрение",
+
+  "advancements.adventures.golden_chest_king_pillager.description": "А ну...отдай сундук!",
+  "advancements.adventures.golden_chest_king_pillager.title": "Сундук наглеца",
+
+  "advancements.adventures.warped_bone_meal.description": "Теперь сделаем траву",
+  "advancements.adventures.warped_bone_meal.title": "Как не эстетично...",
+
+  "advancements.adventures.rose_of_ghosty_tears.description": "Цветок питаемый состраданием мертвых к живым, заблудившихся в незере",
+  "advancements.adventures.rose_of_ghosty_tears.title": "Слезы падших",
+
+  "advancements.adventures.spatial_orchid.description": "Прыгнуть сейчас не помешает",
+  "advancements.adventures.spatial_orchid.title": "Нежданное путешествие",
+
+  "advancements.adventures.rose_of_the_murderer.description": "А откуда, думаете, столько душ в песке?",
+  "advancements.adventures.rose_of_the_murderer.title": "Злобная червоточина",
+
+  "advancements.adventures.fire_stem.description": "ТЫ НЕ ПРОЙДЕЕЕЕЕШЬ!!",
+  "advancements.adventures.fire_stem.title": "Молод и горяч",
+
+  "advancements.adventures.yadoga.description": "Яд в малых дозах - лекарство",
+  "advancements.adventures.yadoga.title": "Королева болот",
+
+  "advancements.adventures.freeze_berries.description": "Холодный ум и свежее дыхание.",
+  "advancements.adventures.freeze_berries.title": "Зимняя ягода",
+
+  "advancements.adventures.cheese.description": "Не каркай!",
+  "advancements.adventures.cheese.title": "Сыыыыр!",
+
+  "advancements.adventures.black_berries.description": "А что если применить эту ягоду для зачарования чего-либо? Да не, бред какой-то...Или не бред?",
+  "advancements.adventures.black_berries.title": "Узри, волшебство!",
+
+  "advancements.adventures.the_pillagers_chest.description": "Имеют ли невиновные моральное право на свою долю при дележе награбленного?",
+  "advancements.adventures.the_pillagers_chest.title": "Робин Гуд",
+
+  "advancements.adventure.magic_adventures.title": "Вошебная кухня",
+  "advancements.adventure.magic_adventures.description": "Сказ о том, как маг джем варил"
+}
