@@ -13,12 +13,16 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.sanberdir.wizardry_delight.event.ModEventClientBusEvents;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
+import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
 import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
+import software.bernie.geckolib3.network.GeckoLibNetwork;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(WizardryDelight.MODID)
@@ -27,22 +31,23 @@ public class WizardryDelight
     // Define mod id in a common place for everything to reference
     public static final String MODID = "wizardry_delight";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
+
 
     public WizardryDelight()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        // Register the commonSetup method for modloading
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
+;
+        ModWDEffects.register(modEventBus);
+
+        GeckoLib.initialize();
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
-        ModWDEffects.register(modEventBus);
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

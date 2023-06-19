@@ -2,6 +2,8 @@ package net.sanberdir.wizardry_delight.init;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -9,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.WizardryDelight;
+import net.sanberdir.wizardry_delight.armor.ModArmorMaterials;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 
@@ -155,7 +158,9 @@ public class InitItems {
     public static final RegistryObject<Item> GOLDEN_CHEST_KING_PILLAGER = ITEMS.register("golden_chest_king_pillager",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
-
+    public static final RegistryObject<Item> HAT_HELMET = ITEMS.register("hat_helmet",
+            () -> new HatArmorItem(ModArmorMaterials.HAT, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
