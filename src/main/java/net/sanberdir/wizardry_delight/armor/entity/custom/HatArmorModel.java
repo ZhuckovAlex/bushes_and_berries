@@ -16,6 +16,6 @@ public class HatArmorModel extends AnimatedGeoModel<HatArmorItem> {
     }
 
     public ResourceLocation getAnimationResource(HatArmorItem animatable) {
-        return new ResourceLocation(WizardryDelight.MODID, "animations/armor_animation.json");
+        return new ResourceLocation(WizardryDelight.MODID, "animations/armor.animation.json");
     }
 }
