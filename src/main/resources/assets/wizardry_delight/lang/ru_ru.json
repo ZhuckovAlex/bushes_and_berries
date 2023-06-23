@@ -26,7 +26,7 @@
   "item.wizardry_delight.a_drop_of_love": "Капля любви",
   "item.wizardry_delight.yadoga_jam": "Варенье из ядоги",
   "item.wizardry_delight.crimson_bone_meal": "Багровая костная мука",
-  "item.wizardry_delight.clear_dragolit_nugget": "Чистый драгонитовый осколок",
+  "item.wizardry_delight.clear_dragolit_nugget": "Чистый драконитовый осколок",
   "effect.wizardry_delight.tasty_food": "Вкусная еда",
   "effect.wizardry_delight.ender_no_look": "Эндер слепота",
   "item.wizardry_delight.soul_stone": "Камень душ",
@@ -34,7 +34,7 @@
   "item.wizardry_delight.freeze_berries": "Морожка",
   "item.wizardry_delight.freeze_jam": "Морожковый джем",
   "item.wizardry_delight.raw_bear_meat": "Сырая медвежатина",
-  "item.wizardry_delight.cocked_bear_meat": "Готовая медвежатина",
+  "item.wizardry_delight.cocked_bear_meat": "Жаренная медвежатина",
   "item.wizardry_delight.glowing_jam": "Варенье из светящихся ягод",
   "item.wizardry_delight.meadow_golden_flower": "Луговой златоцвет",
   "item.wizardry_delight.shulker_elytra": "Драколитовые элитры",
@@ -52,10 +52,10 @@
   "item.wizardry_delight.the_pillagers_chest": "Сундук разбойников",
   "itemGroup.wizardry_delight": "Wizardry delight",
 
-  "advancements.adventures.a_drop_of_love.description": "С ним и перловка вкуснее!",
+  "advancements.adventures.a_drop_of_love.description": "Добудьте каплю любви",
   "advancements.adventures.a_drop_of_love.title": "Секретный ингредиент",
 
-  "advancements.adventures.meadow_golden_flower.description": "Не всё золото, что блестит",
+  "advancements.adventures.meadow_golden_flower.description": "Найдите луговой златоцвет",
   "advancements.adventures.meadow_golden_flower.title": "Доктор Румпельштильцхен",
 
   "advancements.adventures.healing_dew.description": "'Зомби не едят пончики, а пьют отвары!' - Эваторн Длиннобородый - целитель 1-го разряда, героийски погибший в обьятьях благодарного зараженного.",
@@ -82,22 +82,22 @@
   "advancements.adventures.rose_of_the_murderer.description": "А откуда, думаете, столько душ в песке?",
   "advancements.adventures.rose_of_the_murderer.title": "Злобная червоточина",
 
-  "advancements.adventures.fire_stem.description": "ТЫ НЕ ПРОЙДЕЕЕЕЕШЬ!!",
-  "advancements.adventures.fire_stem.title": "Молод и горяч",
+  "advancements.adventures.fire_stem.description": "Сорвите пламенный стебель в незере",
+  "advancements.adventures.fire_stem.title": "ТЫ НЕ ПРОЙДЕЕШЬ!!",
 
-  "advancements.adventures.yadoga.description": "Яд в малых дозах - лекарство",
+  "advancements.adventures.yadoga.description": "Найдите ядогу в болотах",
   "advancements.adventures.yadoga.title": "Королева болот",
 
   "advancements.adventures.freeze_berries.description": "Холодный ум и свежее дыхание.",
   "advancements.adventures.freeze_berries.title": "Зимняя ягода",
 
-  "advancements.adventures.cheese.description": "Не каркай!",
+  "advancements.adventures.cheese.description": "Поддаваться обольщению запрещено!",
   "advancements.adventures.cheese.title": "Сыыыыр!",
 
   "advancements.adventures.black_berries.description": "А что если применить эту ягоду для зачарования чего-либо? Да не, бред какой-то...Или не бред?",
   "advancements.adventures.black_berries.title": "Узри, волшебство!",
 
-  "advancements.adventures.the_pillagers_chest.description": "Имеют ли невиновные моральное право на свою долю при дележе награбленного?",
+  "advancements.adventures.the_pillagers_chest.description": "Украдите у разбойников их сундук",
   "advancements.adventures.the_pillagers_chest.title": "Робин Гуд",
 
   "advancements.adventure.magic_adventures.title": "Вошебная кухня",
