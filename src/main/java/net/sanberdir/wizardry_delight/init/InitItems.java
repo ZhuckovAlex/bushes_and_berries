@@ -151,11 +151,26 @@ public class InitItems {
                             .build())));
 
     public static final RegistryObject<Item> SWEET_ROLL = ITEMS.register("sweet_roll",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(12).saturationMod(1).alwaysEat().fast()
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationMod(1).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2400, 2), 1F)
                     .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 2400, 0), 1F)
                     .build())));
 
+    public static final RegistryObject<Item> JAM_TONIC = ITEMS.register("jam_tonic",
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.25f).alwaysEat().fast()
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 1), 1F)
+                    .effect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2400, 1), 1F)
+                    .build())));
+
+    public static final RegistryObject<Item> LEVITAN_JAM = ITEMS.register("levitan_jam",
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(12).saturationMod(0.25f).alwaysEat().fast()
+                            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 1200, 0), 1F)
+                            .effect(new MobEffectInstance(MobEffects.JUMP, 1200, 1), 1F)
+                            .effect(new MobEffectInstance(MobEffects.LEVITATION, 400, 0), 1F)
+                            .build())));
     public static final RegistryObject<Item> HEALING_DEW = ITEMS.register("healing_dew",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> A_DROP_OF_LOVE = ITEMS.register("a_drop_of_love",
