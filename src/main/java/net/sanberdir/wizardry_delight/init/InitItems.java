@@ -166,6 +166,13 @@ public class InitItems {
                     .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 8), 1F)
                     .build())));
 
+    public static final RegistryObject<Item> JAM_INVISIBILITY = ITEMS.register("jam_invisibility",
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.2f).alwaysEat().fast()
+                            .effect(new MobEffectInstance(MobEffects.INVISIBILITY, 9600, 0), 1F)
+                            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 0), 1F)
+                            .build())));
+
     public static final RegistryObject<Item> LEVITAN_JAM = ITEMS.register("levitan_jam",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.2f).alwaysEat().fast()

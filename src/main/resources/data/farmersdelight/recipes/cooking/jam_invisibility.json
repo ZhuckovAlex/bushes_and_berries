@@ -10,24 +10,24 @@
       "item": "wizardry_delight:sugar_refined"
     },
     {
-      "item": "minecraft:fire_charge"
+      "item": "minecraft:fermented_spider_eye"
     },
     {
       "item": "wizardry_delight:sugar_refined"
     },
     {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:phantom_membrane"
     },
     {
-      "item": "minecraft:heart_of_the_sea"
+      "item": "minecraft:honey_bottle"
     },
     {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:phantom_membrane"
     }
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "wizardry_delight:jam_tonic",
+    "item": "wizardry_delight:jam_invisibility",
     "count": 3
   }
 }

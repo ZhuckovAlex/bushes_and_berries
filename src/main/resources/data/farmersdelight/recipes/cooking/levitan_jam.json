@@ -10,24 +10,24 @@
       "item": "wizardry_delight:sugar_refined"
     },
     {
-      "item": "minecraft:fire_charge"
+      "item": "minecraft:firework_rocket"
     },
     {
       "item": "wizardry_delight:sugar_refined"
     },
     {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:golden_carrot"
     },
     {
-      "item": "minecraft:heart_of_the_sea"
+      "item": "minecraft:writable_book"
     },
     {
-      "item": "minecraft:redstone_block"
+      "item": "minecraft:golden_carrot"
     }
   ],
   "recipe_book_tab": "drinks",
   "result": {
-    "item": "wizardry_delight:jam_tonic",
+    "item": "wizardry_delight:levitan_jam",
     "count": 3
   }
 }
