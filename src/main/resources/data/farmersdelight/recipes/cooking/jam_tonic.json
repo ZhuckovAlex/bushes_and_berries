@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 5.0,
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "ingredients": [
+    {
+      "item": "wizardry_delight:sugar_refined"
+    },
+    {
+      "item": "minecraft:fire_charge"
+    },
+    {
+      "item": "wizardry_delight:sugar_refined"
+    },
+    {
+      "item": "minecraft:redstone_block"
+    },
+    {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    {
+      "item": "minecraft:redstone_block"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "wizardry_delight:healing_dew",
+    "count": 3
+  }
+}
