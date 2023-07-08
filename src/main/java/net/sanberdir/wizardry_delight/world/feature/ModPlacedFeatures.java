@@ -54,9 +54,9 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.ROSE_OF_THE_MURDERER.getHolder().get(), commonOrePlacement(6, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(100)))));
 
-  /*  public static final RegistryObject<PlacedFeature> STRANGE_SHIP_ORE_PLACED = PLACED_FEATURES.register("strange_chip_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.STRANGE_SHIP_ORE.getHolder().get(), commonOrePlacement(4, // VeinsPerChunk
-                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));*/
+   public static final RegistryObject<PlacedFeature> STRANGE_SHIP_ORE_PLACED = PLACED_FEATURES.register("strange_chip_ore_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.STRANGE_SHIP_ORE.getHolder().get(), commonOrePlacement(2, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
 
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {

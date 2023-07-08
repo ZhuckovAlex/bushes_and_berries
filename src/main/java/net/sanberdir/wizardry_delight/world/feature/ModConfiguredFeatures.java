@@ -1,8 +1,10 @@
 package net.sanberdir.wizardry_delight.world.feature;
 
+import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
@@ -11,6 +13,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -18,6 +21,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class ModConfiguredFeatures {
 
@@ -82,10 +86,10 @@ public class ModConfiguredFeatures {
                             ModPlacedFeatures.APPLE_CHECKED.getHolder().get(),
                             0.5F)), ModPlacedFeatures.APPLE_CHECKED.getHolder().get())));
 
-   /* public static final Supplier<List<OreConfiguration.TargetBlockState>> STRANGE_SHIP_ORES = Suppliers.memoize(() -> List.of(
+   public static final Supplier<List<OreConfiguration.TargetBlockState>> STRANGE_SHIP_ORES = Suppliers.memoize(() -> List.of(
             OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), InitBlocks.STRANGE_SHIP.get().defaultBlockState())));
     public static final RegistryObject<ConfiguredFeature<?, ?>> STRANGE_SHIP_ORE = CONFIGURED_FEATURES.register("strange_chip_ore",
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(STRANGE_SHIP_ORES.get(), 5)));*/
+            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(STRANGE_SHIP_ORES.get(), 5)));
 
     public static void register(IEventBus eventBus) {
         CONFIGURED_FEATURES.register(eventBus);

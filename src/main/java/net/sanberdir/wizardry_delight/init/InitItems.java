@@ -135,12 +135,12 @@ public class InitItems {
     public static final RegistryObject<Item> WARPED_BONE_MEAL = ITEMS.register("warped_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
-  /*  public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
+   public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> CLEAR_DRAGOLIT_NUGGET = ITEMS.register("clear_dragolit_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> DRAGOLIT_INGOT = ITEMS.register("dragolit_ingot",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));*/
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> SILVERAN = ITEMS.register("silveran",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

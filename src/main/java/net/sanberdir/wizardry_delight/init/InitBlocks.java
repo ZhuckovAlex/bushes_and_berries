@@ -74,9 +74,9 @@ public class InitBlocks {
             () -> new FlameBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(2.0F, 3.0F)
                     .sound(SoundType.WOOD)), ModCreativeModeTab.BUSHES);
 
-   /* public static final RegistryObject<Block> STRANGE_SHIP = registerBlock("strange_chip",
+    public static final RegistryObject<Block> STRANGE_SHIP = registerBlock("strange_chip",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).requiresCorrectToolForDrops()
-                    .strength(30.0F, 1200.0F).sound(SoundType.ANCIENT_DEBRIS)), ModCreativeModeTab.BUSHES);*/
+                    .strength(30.0F, 1200.0F).sound(SoundType.ANCIENT_DEBRIS)), ModCreativeModeTab.BUSHES);
 
     public static final RegistryObject<Block> APPLE_STAIRS = registerBlock("apple_stairs",
             () -> new FlameStairsBlock(() -> InitBlocks.APPLE_PLANKS.get().defaultBlockState(),
