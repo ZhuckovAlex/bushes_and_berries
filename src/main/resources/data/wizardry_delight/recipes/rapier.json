@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "key": {
+    "A": {
+      "item": "minecraft:lime_wool"
+    },
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "wizardry_delight:dragolit_ingot"
+    }
+  },
+  "pattern": [
+    "  #",
+    "A# ",
+    "BA "
+  ],
+  "result": {
+    "count": 1,
+    "item": "wizardry_delight:rapier"
+  }
+}

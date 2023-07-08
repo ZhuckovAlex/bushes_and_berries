@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "wizardry_delight:strange_scrap"
+    },
+    {
+      "item": "wizardry_delight:strange_scrap"
+    },
+    {
+      "item": "wizardry_delight:strange_scrap"
+    },
+    {
+      "item": "farmersdelight:milk_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "wizardry_delight:apple_jam",
+    "count": 3
+  }
+}
