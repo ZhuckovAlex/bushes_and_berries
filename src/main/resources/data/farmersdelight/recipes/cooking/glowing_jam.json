@@ -24,7 +24,7 @@
       "item": "minecraft:glowstone_dust"
     }
   ],
-  "recipe_book_tab": "drinks",
+  "recipe_book_tab": "jam",
   "result": {
     "item": "wizardry_delight:glowing_jam"
   }

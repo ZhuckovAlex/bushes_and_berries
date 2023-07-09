@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "wizardry_delight:raw_bear_meat"
+    }
+  ],
+  "result": [
+    {
+      "count": 2,
+      "item": "wizardry_delight:slicing_from_raw_bear_meat"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -16,9 +16,9 @@
       "item": "farmersdelight:milk_bottle"
     }
   ],
-  "recipe_book_tab": "drinks",
+  "recipe_book_tab": "dragolit_ingot",
   "result": {
-    "item": "wizardry_delight:apple_jam",
+    "item": "wizardry_delight:dragolit_ingot",
     "count": 3
   }
 }
