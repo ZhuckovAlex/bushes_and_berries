@@ -20,7 +20,7 @@
       "translate": "advancements.adventures.rapier.description"
     },
     "frame": "challenge",
-    "hidden": true,
+    "hidden": false,
     "icon": {
       "item": "wizardry_delight:rapier"
     },
