@@ -18,6 +18,7 @@ import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
+import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
 import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import org.slf4j.Logger;
@@ -42,7 +43,7 @@ public class WizardryDelight
         InitBlocks.register(modEventBus);
 ;
         ModWDEffects.register(modEventBus);
-
+        CustomSoundEvents.register(modEventBus);
         GeckoLib.initialize();
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);

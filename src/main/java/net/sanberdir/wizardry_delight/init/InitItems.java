@@ -14,6 +14,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.armor.ModArmorMaterials;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
+import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -139,7 +140,7 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> RAPIER = ITEMS.register("rapier",
-            () -> new SwordItem(Tiers.NETHERITE, -2,-2f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new SwordItem(Tiers.NETHERITE, -2,-1.8f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> CLEAR_DRAGOLIT_NUGGET = ITEMS.register("clear_dragolit_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> DRAGOLIT_INGOT = ITEMS.register("dragolit_ingot",
@@ -147,8 +148,21 @@ public class InitItems {
 
     public static final RegistryObject<Item> SILVERAN = ITEMS.register("silveran",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> WIZARDRY_DELIGHT_JAM = ITEMS.register("wizardry_delight_jam",
+            () -> new RecordItem(8, CustomSoundEvents.WIZARDRY_DELIGHT_JAM.get() ,new Item.Properties().tab(ModCreativeModeTab.BUSHES),16));
     public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+            () -> new Cheese(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
+                            .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
+                            .build())));
+    public static final RegistryObject<Item> CHEESE_1 = ITEMS.register("cheese_1",
+            () -> new Cheese1(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
+                            .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
+                            .build())));
+    public static final RegistryObject<Item> CHEESE_2 = ITEMS.register("cheese_2",
+            () -> new Cheese2(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
                             .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
                             .build())));

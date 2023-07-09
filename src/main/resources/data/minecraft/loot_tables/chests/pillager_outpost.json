@@ -57,14 +57,14 @@
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "max": 3.0,
+                "max": 1.0,
                 "min": 1.0
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "wizardry_delight:the_pillagers_chest",
-          "weight": 3
+          "weight": 5
         },
         {
           "type": "minecraft:item",

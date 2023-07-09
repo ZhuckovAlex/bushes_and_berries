@@ -36,8 +36,7 @@ public class ChestGoldenProcedure {
                 _player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
             }
             if (entity instanceof Player _player)
-                _player.giveExperiencePoints(500);
-
+                _player.giveExperiencePoints((int) Mth.nextDouble(RandomSource.create(), 800, 1000));
             if (Math.random() < 0.1) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.DIAMOND);
@@ -52,7 +51,7 @@ public class ChestGoldenProcedure {
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
             }
-            if (Math.random() < 1) {
+            if (Math.random() <= 1) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.EMERALD);
                     _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 3));
@@ -73,7 +72,7 @@ public class ChestGoldenProcedure {
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
             }
-            if (Math.random() < 0.3) {
+            if (Math.random() <= 0.8) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
                     _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 2));
