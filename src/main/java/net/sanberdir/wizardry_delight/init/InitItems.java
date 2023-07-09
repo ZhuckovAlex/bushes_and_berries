@@ -153,23 +153,23 @@ public class InitItems {
             () -> new RecordItem(8, CustomSoundEvents.WIZARDRY_DELIGHT_JAM.get() ,new Item.Properties().tab(ModCreativeModeTab.BUSHES),16));
     public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese",
             () -> new Cheese(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat()
                             .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
                             .build())));
     public static final RegistryObject<Item> CHEESE_1 = ITEMS.register("cheese_1",
-            () -> new Cheese1(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
+            () -> new Cheese1(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat()
                             .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
                             .build())));
     public static final RegistryObject<Item> CHEESE_2 = ITEMS.register("cheese_2",
-            () -> new Cheese2(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat().fast()
+            () -> new Cheese2(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(1).alwaysEat()
                             .effect(new MobEffectInstance(MobEffects.REGENERATION, 200, 1), 1F)
                             .build())));
 
     public static final RegistryObject<Item> SWEET_ROLL = ITEMS.register("sweet_roll",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(12).saturationMod(1).alwaysEat().fast()
+                    .food(new FoodProperties.Builder().nutrition(12).saturationMod(1).alwaysEat()
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2400, 2), 1F)
                     .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 2400, 0), 1F)
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0), 1F)
