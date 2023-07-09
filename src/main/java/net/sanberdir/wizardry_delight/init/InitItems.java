@@ -70,18 +70,18 @@ public class InitItems {
 
 
     public static final RegistryObject<Item> APPLE_JAM = ITEMS.register("apple_jam",
-            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(12).saturationMod(0.7f)
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(9).saturationMod(0.7f)
                     .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 2400, 0), 1F)
                     .build())));
 
     public static final RegistryObject<Item> GLOWING_JAM = ITEMS.register("glowing_jam",
-            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f)
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(12).saturationMod(0.167f)
                     .effect(new MobEffectInstance(MobEffects.GLOWING, 800, 0), 1F)
                     .build())));
 
 
     public static final RegistryObject<Item>  CHARNIKA_JAM = ITEMS.register("charnika_jam",
-            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8f)
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(5).saturationMod(4f)
                     .effect(new MobEffectInstance(MobEffects.LUCK, 6000, 1), 0.05f)
                     .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 3600, 0), 0.7f)
                     .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 3600, 0), 0.4f)
@@ -101,35 +101,35 @@ public class InitItems {
 
 
     public static final RegistryObject<Item>  FREEZE_JAM = ITEMS.register("freeze_jam",
-            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f)
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.5f)
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 0), 1F)
                     .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600, 0), 1F)
                     .build())));
 
     public static final RegistryObject<Item>  RAW_BEAR_MEET = ITEMS.register("raw_bear_meat",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.65f)
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f)
                     .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
                     .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
                     .build())));
 
     public static final RegistryObject<Item>  COCKED_BEAR_MEET = ITEMS.register("cocked_bear_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f)
+                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)
                     .build())));
     public static final RegistryObject<Item>  SLICING_FROM_RAW_BEAR_MEET = ITEMS.register("slicing_from_raw_bear_meat",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3f)
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f)
                     .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
                     .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
                     .build())));
 
     public static final RegistryObject<Item> SLICING_FROM_COCKED_BEAR_MEET = ITEMS.register("slicing_from_cocked_bear_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.3f)
+                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.81f)
                             .build())));
 
     public static final RegistryObject<Item> SWEET_JAM = ITEMS.register("sweet_jam",
-            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6f)
-                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 2400, 0), 1F)
+            () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f)
+                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 1200, 0), 1F)
                     .build())));
     public static final RegistryObject<Item> JAR = ITEMS.register("jar",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
@@ -187,7 +187,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> JAM_TONIC = ITEMS.register("jam_tonic",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).alwaysEat().fast()
+                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(2f).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 4800, 3), 1F)
                     .effect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 4800, 3), 1F)
                     .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 8), 1F)
@@ -195,14 +195,14 @@ public class InitItems {
 
     public static final RegistryObject<Item> JAM_INVISIBILITY = ITEMS.register("jam_invisibility",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).alwaysEat().fast()
+                    .food(new FoodProperties.Builder().nutrition(10).saturationMod(0.2f).alwaysEat().fast()
                             .effect(new MobEffectInstance(MobEffects.INVISIBILITY, 9600, 0), 1F)
                             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 0), 1F)
                             .build())));
 
     public static final RegistryObject<Item> LEVITAN_JAM = ITEMS.register("levitan_jam",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.6f).alwaysEat().fast()
+                    .food(new FoodProperties.Builder().nutrition(20).saturationMod(0.5f).alwaysEat().fast()
                             .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 2400, 0), 1F)
                             .effect(new MobEffectInstance(MobEffects.JUMP, 2000, 1), 1F)
                             .effect(new MobEffectInstance(MobEffects.LEVITATION, 800, 5), 1F)
@@ -220,7 +220,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> HAT_HELMET = ITEMS.register("hat_helmet",
             () -> new HatArmorItem(ModArmorMaterials.HAT, EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+                    new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

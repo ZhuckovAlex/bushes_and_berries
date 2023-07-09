@@ -25,8 +25,8 @@ public class InitBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, WizardryDelight.MODID);
 
 // Растения
-    public static final RegistryObject<Block> DRYER = registerBlock("dryer",
-            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion()), ModCreativeModeTab.BUSHES);
+    public static final RegistryObject<Block> DRYER = registerBlockWithoutBlockItem("dryer",
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion()));
 
     public static final RegistryObject<Block> CHARNIKA = registerBlockWithoutBlockItem("charnika",
             () -> new BlackBerries(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));

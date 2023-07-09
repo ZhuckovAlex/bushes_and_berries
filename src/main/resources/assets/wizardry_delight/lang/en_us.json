@@ -13,7 +13,7 @@
   "item.wizardry_delight.apple_fence": "Apple fence",
   "item.wizardry_delight.apple_fence_gate": "Apple fence gate",
   "item.wizardry_delight.apple_jam": "Apple jam",
-  "item.wizardry_delight.jam_tonic": "Jam tonic",
+  "item.wizardry_delight.jam_tonic": "Jam-tonic",
   "item.wizardry_delight.jam_invisibility": "Jam invisibility",
   "item.wizardry_delight.levitan_jam": "Levitan jam",
   "item.wizardry_delight.jar": "Jar",
@@ -111,5 +111,11 @@
   "advancements.adventures.the_pillagers_chest.title": "Robin Hood",
 
   "advancements.adventure.magic_adventures.title": "Magic Kitchen",
-  "advancements.adventure.magic_adventures.description": "The tale of how the magician made jam"
+  "advancements.adventure.magic_adventures.description": "The tale of how the magician made jam",
+
+  "advancements.adventures.strange_scrap.description": "Find the dracolite debris",
+  "advancements.adventures.strange_scrap.title": "Fragments og the End",
+
+  "advancements.adventures.rapier.description": "Create a dracolite rapier",
+  "advancements.adventures.rapier.title": "Lady Stark's dream"
 }

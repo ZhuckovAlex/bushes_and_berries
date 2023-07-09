@@ -11,7 +11,7 @@ public class ModCreativeModeTab {
     public static final CreativeModeTab BUSHES = new CreativeModeTab("wizardry_delight") {
             @Override
             public ItemStack makeIcon() {
-                return new ItemStack(InitItems.BLACK_BERRIES.get());
+                return new ItemStack(InitItems.HAT_HELMET.get());
             }
         };
 }
