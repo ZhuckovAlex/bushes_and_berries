@@ -1,5 +1,6 @@
 package net.sanberdir.wizardry_delight.init.customblock;
 
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -9,6 +10,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
@@ -20,13 +22,24 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.procedures.AppleBlockProcedure;
 import org.jetbrains.annotations.Nullable;
 
 public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
+    @Override
+    public MaterialColor getMapColor(BlockState state, BlockGetter level, BlockPos pos, MaterialColor defaultColor) {
+        return super.getMapColor(state, level, pos, defaultColor);
+        }
+
+
+
 
 
     public FlameLeavesApple(BlockBehaviour.Properties p_54422_) {
@@ -71,5 +84,12 @@ public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
     @Override
     public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
         AppleBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
+        event.getBlockColors().register((bs, world, pos, index) -> {
+            return world != null && pos != null ? BiomeColors.getAverageGrassColor(world, pos) : GrassColor.get(0.5D, 1.0D);
+        }, InitBlocks.APPLE_LEAVES.get());
     }
 }

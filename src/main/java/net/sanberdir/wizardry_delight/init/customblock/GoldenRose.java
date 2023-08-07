@@ -1,5 +1,6 @@
 package net.sanberdir.wizardry_delight.init.customblock;
 
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
@@ -9,6 +10,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -17,7 +19,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.PlantType;
+import net.sanberdir.wizardry_delight.init.InitBlocks;
 
 public class GoldenRose extends Block implements net.minecraftforge.common.IPlantable {
 
@@ -25,6 +31,7 @@ public class GoldenRose extends Block implements net.minecraftforge.common.IPlan
     public GoldenRose(Properties p_49795_) {
         super(p_49795_);
     }
+
 
     public boolean canSurvive(BlockState p_57175_, LevelReader p_57176_, BlockPos p_57177_) {
         BlockState soil = p_57176_.getBlockState(p_57177_.below());

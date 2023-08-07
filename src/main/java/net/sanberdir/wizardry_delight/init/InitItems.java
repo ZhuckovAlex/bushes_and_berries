@@ -116,6 +116,17 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)
                     .build())));
+
+    public static final RegistryObject<Item>  RAW_GOATS_MEET = ITEMS.register("raw_goats_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f)
+                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
+                    .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
+                    .build())));
+
+    public static final RegistryObject<Item>  COCKED_GOATS_MEET = ITEMS.register("cocked_goats_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)
+                            .build())));
     public static final RegistryObject<Item>  SLICING_FROM_RAW_BEAR_MEET = ITEMS.register("slicing_from_raw_bear_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f)
                     .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
@@ -149,6 +160,9 @@ public class InitItems {
    public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
+    public static final RegistryObject<Item> ROBIN_STICK = ITEMS.register("robin_stick",
+            () -> new Item(new Item.Properties().durability(150).tab(ModCreativeModeTab.BUSHES)));
+
     public static final RegistryObject<Item> RAPIER = ITEMS.register("rapier",
             () -> new SwordItem(Tiers.NETHERITE, -2,-1.8f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> CLEAR_DRAGOLIT_NUGGET = ITEMS.register("clear_dragolit_nugget",
@@ -158,6 +172,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> SILVERAN = ITEMS.register("silveran",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
 
     public static final RegistryObject<Item> WIZARDRY_DELIGHT_JAM = ITEMS.register("wizardry_delight_jam",
             () -> new RecordItem(8, CustomSoundEvents.WIZARDRY_DELIGHT_JAM.get() ,new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES),16));
