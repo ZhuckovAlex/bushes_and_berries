@@ -36,7 +36,7 @@ public class ModFireball extends Fireball {
             HitByEntity.execute(level,getX(),getY(),getZ(),entity);
         }
     }
-
+//вв
     protected void onHitBlock(BlockHitResult p_37384_) {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
