@@ -28,14 +28,14 @@ public class StrikeRobinStick {
     public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
         if (event.getHand() != event.getEntity().getUsedItemHand())
             return;
-        execute(event, event.getEntity());
+        execute(event, event.getEntity(),event.getItemStack());
     }
 
-    public static void execute(Entity entity) {
-        execute(null, entity);
+    public static void execute(Entity entity,ItemStack itemStack) {
+        execute(null, entity,itemStack);
     }
 
-    private static void execute(@Nullable Event event, Entity entity) {
+    private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
         if (entity == null)
             return;
         if (!(new Object() {
@@ -47,7 +47,7 @@ public class StrikeRobinStick {
                 }
                 return false;
             }
-        }.checkGamemode(entity))) {
+        }.checkGamemode(entity)) && ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).getDamageValue() < 69) {
             {
                 ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
                 if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -55,25 +55,57 @@ public class StrikeRobinStick {
                     _ist.setDamageValue(0);
                 }
             }
+            if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.ROBIN_STICK.get().asItem()) {
+                {
+                    Entity _shootFrom = entity;
+                    Level projectileLevel = _shootFrom.level;
+                    if (!projectileLevel.isClientSide()) {
+                        Projectile _entityToSpawn = new Object() {
+                            public Projectile getFireball(Level level, Entity shooter, double ax, double ay, double az) {
+                                AbstractHurtingProjectile entityToSpawn = new ModFireball(EntityType.SMALL_FIREBALL, level);
+                                entityToSpawn.setOwner(shooter);
+                                entityToSpawn.xPower = ax;
+                                entityToSpawn.yPower = ay;
+                                entityToSpawn.zPower = az;
+                                return entityToSpawn;
+                            }
+                        }.getFireball(projectileLevel, entity, (entity.getLookAngle().x / 10), (entity.getLookAngle().y / 10), (entity.getLookAngle().z / 10));
+                        _entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+                        _entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+                        projectileLevel.addFreshEntity(_entityToSpawn);
+                    }
+                }
+            }
         }
-        if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.ROBIN_STICK.get().asItem()) {
-            {
-                Entity _shootFrom = entity;
-                Level projectileLevel = _shootFrom.level;
-                if (!projectileLevel.isClientSide()) {
-                    Projectile _entityToSpawn = new Object() {
-                        public Projectile getFireball(Level level, Entity shooter, double ax, double ay, double az) {
-                            AbstractHurtingProjectile entityToSpawn = new ModFireball(EntityType.SMALL_FIREBALL, level);
-                            entityToSpawn.setOwner(shooter);
-                            entityToSpawn.xPower = ax;
-                            entityToSpawn.yPower = ay;
-                            entityToSpawn.zPower = az;
-                            return entityToSpawn;
-                        }
-                    }.getFireball(projectileLevel, entity, (entity.getLookAngle().x / 10), (entity.getLookAngle().y / 10), (entity.getLookAngle().z / 10));
-                    _entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-                    _entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
-                    projectileLevel.addFreshEntity(_entityToSpawn);
+        if ((new Object() {
+            public boolean checkGamemode(Entity _ent) {
+                if (_ent instanceof ServerPlayer _serverPlayer) {
+                    return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+                } else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
+                    return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+                }
+                return false;
+            }
+        }.checkGamemode(entity))){
+            if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.ROBIN_STICK.get().asItem()) {
+                {
+                    Entity _shootFrom = entity;
+                    Level projectileLevel = _shootFrom.level;
+                    if (!projectileLevel.isClientSide()) {
+                        Projectile _entityToSpawn = new Object() {
+                            public Projectile getFireball(Level level, Entity shooter, double ax, double ay, double az) {
+                                AbstractHurtingProjectile entityToSpawn = new ModFireball(EntityType.SMALL_FIREBALL, level);
+                                entityToSpawn.setOwner(shooter);
+                                entityToSpawn.xPower = ax;
+                                entityToSpawn.yPower = ay;
+                                entityToSpawn.zPower = az;
+                                return entityToSpawn;
+                            }
+                        }.getFireball(projectileLevel, entity, (entity.getLookAngle().x / 10), (entity.getLookAngle().y / 10), (entity.getLookAngle().z / 10));
+                        _entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+                        _entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 0);
+                        projectileLevel.addFreshEntity(_entityToSpawn);
+                    }
                 }
             }
         }

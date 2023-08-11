@@ -7,6 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,11 +17,14 @@ import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
+import net.minecraft.world.entity.decoration.Painting;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.*;
 import net.minecraft.world.entity.monster.hoglin.Hoglin;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.vehicle.*;
+import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -43,6 +48,13 @@ public class HitByEntity {
     public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
         if (entity == null)
             return;
+        if (Math.random() < 0.05) {
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.STAR_DUST.get()));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+        }
 
         if (!(entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Pig.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
@@ -54,11 +66,16 @@ public class HitByEntity {
                     _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.pig.death")), SoundSource.NEUTRAL, 1, 1, false);
                 }
             }
+
+
             if (world instanceof Level _level && !_level.isClientSide()) {
                 ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }
+
+
+
             if (world instanceof ServerLevel _level)
                 _level.sendParticles(ParticleTypes.LAVA, x, y, z, 10, 1, 1, 1, 1);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Pig.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -176,9 +193,9 @@ public class HitByEntity {
                 entity.discard();
             if (world instanceof Level _level) {
                 if (!_level.isClientSide()) {
-                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.eat")), SoundSource.NEUTRAL, 1, 1);
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.spit")), SoundSource.NEUTRAL, 1, 1);
                 } else {
-                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.eat")), SoundSource.NEUTRAL, 1, 1, false);
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.spit")), SoundSource.NEUTRAL, 1, 1, false);
                 }
             }
             if (world instanceof Level _level && !_level.isClientSide()) {
@@ -193,9 +210,9 @@ public class HitByEntity {
                 entity.discard();
             if (world instanceof Level _level) {
                 if (!_level.isClientSide()) {
-                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.eat")), SoundSource.NEUTRAL, 1, 1);
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.spit")), SoundSource.NEUTRAL, 1, 1);
                 } else {
-                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.eat")), SoundSource.NEUTRAL, 1, 1, false);
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.llama.spit")), SoundSource.NEUTRAL, 1, 1, false);
                 }
             }
             if (world instanceof ServerLevel _level)
@@ -459,17 +476,20 @@ public class HitByEntity {
         }
 
 
-        if (!world.getEntitiesOfClass(EnderDragon.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
-
-            if (entity instanceof LivingEntity _entity)
-                _entity.hurt(new DamageSource("out_the_world").bypassArmor(), 30);
-        }
-
-
         if (entity == null)
             return;
-        if (!(!world.getEntitiesOfClass(Warden.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) && !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
-                && !(!world.getEntitiesOfClass(ServerPlayer.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) && !(!world.getEntitiesOfClass(EnderDragon.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+        if (!(!world.getEntitiesOfClass(Warden.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(ServerPlayer.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(EnderDragon.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(Boat.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(ChestBoat.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(Minecart.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(Painting.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(MinecartChest.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(MinecartFurnace.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(MinecartHopper.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
+                && !(!world.getEntitiesOfClass(MinecartTNT.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())
                 && !(!world.getEntitiesOfClass(WitherBoss.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty())) {
             {
                 Entity _ent = entity;
@@ -481,11 +501,14 @@ public class HitByEntity {
         }
 
 
-        if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) <= 20) {
+        if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) < 20) {
             if (entity instanceof Player _player)
                 _player.getFoodData().setFoodLevel((int) ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) + 4));
         }
-
+        if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) == 20) {
+            if (entity instanceof Player _player)
+                _player.hurt(new DamageSource("generic").bypassArmor(), 4);
+        }
 
     }
 }

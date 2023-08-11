@@ -151,6 +151,9 @@ public class InitItems {
     public static final RegistryObject<Item> SOUL_STONE = ITEMS.register("soul_stone",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
+    public static final RegistryObject<Item> STAR_DUST = ITEMS.register("star_dust",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
 
     public static final RegistryObject<Item> CRIMSON_BONE_MEAL = ITEMS.register("crimson_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
@@ -161,7 +164,7 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> ROBIN_STICK = ITEMS.register("robin_stick",
-            () -> new Item(new Item.Properties().durability(150).tab(ModCreativeModeTab.BUSHES)));
+            () -> new Item(new Item.Properties().durability(70).tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> RAPIER = ITEMS.register("rapier",
             () -> new SwordItem(Tiers.NETHERITE, -2,-1.8f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

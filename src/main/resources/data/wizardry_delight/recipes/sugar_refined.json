@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "planks",
+  "group": "sugar_refined",
   "ingredients": [
     {
       "item": "minecraft:sugar"
