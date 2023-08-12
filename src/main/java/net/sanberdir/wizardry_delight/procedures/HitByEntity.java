@@ -52,7 +52,7 @@ public class HitByEntity {
             return;
         if (Math.random() < 0.35) {
             if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.STAR_DUST.get()));
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }

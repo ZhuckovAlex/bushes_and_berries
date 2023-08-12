@@ -55,8 +55,8 @@ public class InitBlocks {
     public static final RegistryObject<Block> APPLE_LOG = registerBlock("apple_log",
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
 
-    public static final RegistryObject<Block> STAR_CAKE = registerBlock("star_cake",
-            () -> new StarCake(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5F).sound(SoundType.WOOL).randomTicks()), ModCreativeModeTab.BUSHES);
+    public static final RegistryObject<Block> WIZARD_PIE = registerBlock("wizard_pie",
+            () -> new WizardPie(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5F).sound(SoundType.WOOL).randomTicks()), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> APPLE_WOOD = registerBlock("apple_wood",
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> STRIPPED_APPLE_LOG = registerBlock("stripped_apple_log",

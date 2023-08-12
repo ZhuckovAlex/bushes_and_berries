@@ -1,13 +1,13 @@
 {
     "textures": {
-        "particle": "wizardry_delight:block/star_cake_side",
-        "bottom": "wizardry_delight:block/star_cake_bottom",
-        "top": "wizardry_delight:block/star_cake_top",
-        "side": "wizardry_delight:block/star_cake_side",
-        "inside": "wizardry_delight:block/star_cake_inner"
+        "particle": "wizardry_delight:block/wizard_pie_side",
+        "bottom": "wizardry_delight:block/wizard_pie_bottom",
+        "top": "wizardry_delight:block/wizard_pie_top",
+        "side": "wizardry_delight:block/wizard_pie_side",
+        "inside": "wizardry_delight:block/wizard_pie_inner"
     },
     "elements": [
-        {   "from": [ 13, 0, 1 ],
+        {   "from": [ 3, 0, 1 ],
             "to": [ 15, 8, 15 ],
             "faces": {
                 "down":  { "texture": "#bottom", "cullface": "down" },

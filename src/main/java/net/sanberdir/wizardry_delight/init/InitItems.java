@@ -161,7 +161,7 @@ public class InitItems {
     public static final RegistryObject<Item> SOUL_STONE = ITEMS.register("soul_stone",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
-    public static final RegistryObject<Item> STAR_DUST = ITEMS.register("star_dust",
+    public static final RegistryObject<Item> SPARKLING_POLLEN = ITEMS.register("sparkling_pollen",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
 
