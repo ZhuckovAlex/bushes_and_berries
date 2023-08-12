@@ -1,16 +1,24 @@
 package net.sanberdir.wizardry_delight.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseFireBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.*;
 import net.sanberdir.wizardry_delight.procedures.HitByBlock;
 import net.sanberdir.wizardry_delight.procedures.HitByEntity;
@@ -41,13 +49,14 @@ public class ModFireball extends Fireball {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
             HitByBlock.execute(level,getX(),getY(),getZ());
-
         }
     }
+
     protected void onHit(HitResult p_37388_) {
         super.onHit(p_37388_);
         if (!this.level.isClientSide) {
             this.discard();
+
         }
 
     }

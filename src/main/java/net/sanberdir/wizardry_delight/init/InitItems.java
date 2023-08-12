@@ -112,6 +112,16 @@ public class InitItems {
                     .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
                     .build())));
 
+    public static final RegistryObject<Item>  RAW_HORSE = ITEMS.register("raw_horse",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5f)
+                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
+                    .build())));
+
+    public static final RegistryObject<Item>  COCKED_HORSE = ITEMS.register("cocked_horse",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+                    .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)
+                            .build())));
+
     public static final RegistryObject<Item>  COCKED_BEAR_MEET = ITEMS.register("cocked_bear_meat",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)

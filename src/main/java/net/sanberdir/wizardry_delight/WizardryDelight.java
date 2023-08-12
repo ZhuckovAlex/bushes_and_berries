@@ -5,6 +5,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,10 +19,17 @@ import net.sanberdir.wizardry_delight.init.InitItems;
 
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
+import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
 import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import software.bernie.geckolib3.GeckoLib;
+
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Mod(WizardryDelight.MODID)
 public class WizardryDelight
@@ -40,6 +48,7 @@ public class WizardryDelight
         InitBlocks.register(modEventBus);
         ModWDEffects.register(modEventBus);
         CustomSoundEvents.register(modEventBus);
+        ModParticles.register(modEventBus);
         GeckoLib.initialize();
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
@@ -51,6 +60,24 @@ public class WizardryDelight
 
     }
 
+
+    private static final Collection<AbstractMap.SimpleEntry<Runnable, Integer>> workQueue = new ConcurrentLinkedQueue<>();
+    public static void queueServerWork(int tick, Runnable action) {
+        workQueue.add(new AbstractMap.SimpleEntry(action, tick));
+    }
+    @SubscribeEvent
+    public void tick(TickEvent.ServerTickEvent event) {
+        if (event.phase == TickEvent.Phase.END) {
+            List<AbstractMap.SimpleEntry<Runnable, Integer>> actions = new ArrayList<>();
+            workQueue.forEach(work -> {
+                work.setValue(work.getValue() - 1);
+                if (work.getValue() == 0)
+                    actions.add(work);
+            });
+            actions.forEach(e -> e.getKey().run());
+            workQueue.removeAll(actions);
+        }
+    }
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
