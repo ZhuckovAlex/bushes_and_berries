@@ -1,11 +1,11 @@
 package net.sanberdir.wizardry_delight.procedures;
+import net.minecraft.world.InteractionHand;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.warden.Warden;
@@ -30,6 +30,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
+import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.init.InitItems;
 
 import javax.annotation.Nullable;
@@ -51,11 +52,15 @@ public class ProcedureSoulStone {
     private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
         if (entity == null)
             return;
-        if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.SOUL_STONE.get()) {
-            if (entity instanceof Player _player) {
-                ItemStack _stktoremove = new ItemStack(InitItems.SOUL_STONE.get());
-                _player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
+        if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.SOUL_STONE_CHARGED.get()) {
+            if (entity instanceof LivingEntity _entity) {
+                ItemStack _setstack = new ItemStack(WizardryDelight.SOUL_STONE_DISCHARGED.get());
+                _setstack.setCount(1);
+                _entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+                if (_entity instanceof Player _player)
+                    _player.getInventory().setChanged();
             }
+
             if (Math.random() < 0.15) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Bee(EntityType.BEE, _level);

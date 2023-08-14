@@ -1,28 +1,37 @@
 package net.sanberdir.wizardry_delight.init.customblock;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.sanberdir.wizardry_delight.WizardryDelight;
+import net.sanberdir.wizardry_delight.particle.ModParticles;
+import net.sanberdir.wizardry_delight.procedures.SoulStoneCharged;
 import net.sanberdir.wizardry_delight.procedures.StombleRoseActive;
+import net.sanberdir.wizardry_delight.procedures.StombleRoseDeactive;
 
-public class StombleRose extends Block implements net.minecraftforge.common.IPlantable {
+public class StombleRose2 extends Block implements net.minecraftforge.common.IPlantable {
 
 
-    public StombleRose(Properties p_49795_) {
+    public StombleRose2(Properties p_49795_) {
         super(p_49795_);
     }
     public boolean canSurvive(BlockState p_57175_, LevelReader p_57176_, BlockPos p_57177_) {
@@ -52,22 +61,24 @@ public class StombleRose extends Block implements net.minecraftforge.common.IPla
 
         for(int i = 0; i < 3; ++i) {
             if (p_222690_.nextBoolean()) {
-                p_222688_.addParticle(ParticleTypes.SOUL_FIRE_FLAME, d0 + p_222690_.nextDouble() / 5.0D, (double)p_222689_.getY() + (0.5D - p_222690_.nextDouble()), d1 + p_222690_.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
+                p_222688_.addParticle(ModParticles.STOMBLE_ROSE.get(), d0 + p_222690_.nextDouble() / 5.0D, (double)p_222689_.getY() + (0.5D - p_222690_.nextDouble()), d1 + p_222690_.nextDouble() / 5.0D, 0.0D, 0.0D, 0.0D);
             }
         }
 
     }
 
-    public void entityInside(BlockState p_58238_, Level p_58239_, BlockPos p_58240_, Entity p_58241_) {
-        if (!p_58239_.isClientSide ) {
-            if (p_58241_ instanceof LivingEntity) {
-                LivingEntity livingentity = (LivingEntity)p_58241_;
-                p_58241_.hurt(new DamageSource("magic").bypassArmor(), 2);
+    @Override
+    public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
+        super.tick(blockstate, world, pos, random);
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
 
-            }
+               StombleRoseDeactive.execute(world, x, y, z);
 
-        }
+        world.scheduleTick(pos, this, 100);
     }
+
 
 
     @Override

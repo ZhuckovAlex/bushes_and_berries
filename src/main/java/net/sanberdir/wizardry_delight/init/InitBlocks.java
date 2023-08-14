@@ -45,6 +45,9 @@ public class InitBlocks {
     public static final RegistryObject<Block> ROSE_OF_THE_MURDERER = registerBlockWithoutBlockItem("rose_of_the_murderer",
             () -> new StombleRose(BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
+    public static final RegistryObject<Block> ROSE_OF_THE_MURDERER2 = registerBlockWithoutBlockItem("rose_of_the_murderer2",
+            () -> new StombleRose2(BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
+
     public static final RegistryObject<Block> SPATIAL_ORCHID = registerBlockWithoutBlockItem("spatial_orchid",
             () -> new Orhidea(BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
 
@@ -76,6 +79,11 @@ public class InitBlocks {
     public static final RegistryObject<Block> APPLE_PLANKS = registerBlock("apple_planks",
             () -> new FlameBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(2.0F, 3.0F)
                     .sound(SoundType.WOOD)), ModCreativeModeTab.BUSHES);
+
+    public static final RegistryObject<Block> A_BLOCK_OF_SPARKING_POLLEN = registerBlock("a_block_of_sparkling_pollen",
+            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).strength(0.2F, 20)
+                    .sound(SoundType.SAND)), ModCreativeModeTab.BUSHES);
+
 
     public static final RegistryObject<Block> STRANGE_SHIP = registerBlock("strange_chip",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_BLACK).requiresCorrectToolForDrops()

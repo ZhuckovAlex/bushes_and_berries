@@ -1,7 +1,13 @@
 package net.sanberdir.wizardry_delight;
 
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -14,9 +20,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import net.sanberdir.wizardry_delight.entity.ModEntities;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 
+import net.sanberdir.wizardry_delight.init.ModCreativeModeTab;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
 import net.sanberdir.wizardry_delight.particle.ModParticles;
@@ -36,6 +47,15 @@ public class WizardryDelight
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "wizardry_delight";
+
+    // Create a Deferred Register to hold Items which will all be registered under the "examplemod" namespace
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
+    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
+
+    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
+    public static final RegistryObject<Item> SOUL_STONE_DISCHARGED = ITEMS.register("soul_stone_discharged", () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
+
     // Directly reference a slf4j logger
 
 
@@ -44,8 +64,11 @@ public class WizardryDelight
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         // Register the commonSetup method for modloading
+        // Register the Deferred Register to the mod event bus so items get registered
+        ITEMS.register(modEventBus);
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
         ModWDEffects.register(modEventBus);
         CustomSoundEvents.register(modEventBus);
         ModParticles.register(modEventBus);

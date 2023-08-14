@@ -563,6 +563,13 @@ public class HitByEntity {
                             _level.addFreshEntity(entityToSpawn);
                         }
                     }
+                    if (Math.random() < 0.25) {
+                        if (world instanceof Level _level && !_level.isClientSide()) {
+                            ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.RABBIT_FOOT));
+                            entityToSpawn.setPickUpDelay(10);
+                            _level.addFreshEntity(entityToSpawn);
+                        }
+                    }
                 }
             }
             if (world instanceof ServerLevel _level)

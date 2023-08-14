@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -158,12 +159,12 @@ public class InitItems {
     public static final RegistryObject<Item> SUGAR_REFINED = ITEMS.register("sugar_refined",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(2).saturationMod(1).alwaysEat().fast().build())));
 
-    public static final RegistryObject<Item> SOUL_STONE = ITEMS.register("soul_stone",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+    public static final RegistryObject<Item> SOUL_STONE_CHARGED = ITEMS.register("soul_stone_charged",
+            () -> new Item(new Item.Properties().craftRemainder(WizardryDelight.SOUL_STONE_DISCHARGED.get()).stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
+
 
     public static final RegistryObject<Item> SPARKLING_POLLEN = ITEMS.register("sparkling_pollen",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
-
 
     public static final RegistryObject<Item> CRIMSON_BONE_MEAL = ITEMS.register("crimson_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
@@ -174,7 +175,7 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> ROBIN_STICK = ITEMS.register("robin_stick",
-            () -> new Item(new Item.Properties().durability(70).tab(ModCreativeModeTab.BUSHES)));
+            () -> new StarBallItem(new Item.Properties().durability(70).tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> RAPIER = ITEMS.register("rapier",
             () -> new SwordItem(Tiers.NETHERITE, -2,-1.8f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
@@ -239,6 +240,9 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> A_DROP_OF_LOVE = ITEMS.register("a_drop_of_love",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> STAR_BALL = ITEMS.register("star_ball",
+            () -> new StarBallItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_PILLAGERS_CHEST = ITEMS.register("the_pillagers_chest",
             () -> new SneakItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

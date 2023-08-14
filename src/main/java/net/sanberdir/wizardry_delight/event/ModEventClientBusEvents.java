@@ -10,10 +10,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.armor.entity.custom.HatArmorRenderer;
 import net.sanberdir.wizardry_delight.init.customblock.FlameLeavesApple;
-import net.sanberdir.wizardry_delight.init.customblock.GoldenRose;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticles;
+import net.sanberdir.wizardry_delight.particle.custom.StombleRoseParticles;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = WizardryDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -32,6 +32,9 @@ public class ModEventClientBusEvents {
         public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
             Minecraft.getInstance().particleEngine.register(ModParticles.ROBIN_STAR_PARTICLES.get(),
                     RobinStarsParticles.Provider::new);
+
+            Minecraft.getInstance().particleEngine.register(ModParticles.STOMBLE_ROSE.get(),
+                    StombleRoseParticles.Provider::new);
         }
     }
 

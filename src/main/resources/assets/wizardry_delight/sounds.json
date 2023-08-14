@@ -27,6 +27,14 @@
       }
     ]
   },
+  "robin_stick": {
+    "subtitle": "sounds.wizardry_delight.robin_stick",
+    "sounds": [
+      {
+        "name": "wizardry_delight:robin_stick"
+      }
+    ]
+  },
   "wizardry_delight_jam": {
     "subtitle": "sounds.wizardry_delight.wizardry_delight_jam",
     "sounds": [

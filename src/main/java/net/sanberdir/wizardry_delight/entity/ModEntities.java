@@ -1,5 +1,5 @@
-package net.sanberdir.wizardry_delight.init.customitem;
-
+package net.sanberdir.wizardry_delight.entity;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -12,14 +12,20 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-
+import net.sanberdir.wizardry_delight.entity.custom.StarBall;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class RollsModEntities {
-    public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, WizardryDelight.MODID);
+public class ModEntities {
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, WizardryDelight.MODID);
+
+    public static final RegistryObject<EntityType<StarBall>> STAR_BALL = register("projectile_star_ball",
+            EntityType.Builder.<StarBall>of(StarBall::new, MobCategory.MISC).setCustomClientFactory(StarBall::new)
+                    .setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-        return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
+        return ENTITY_TYPES.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
     }
 
     @SubscribeEvent
@@ -31,5 +37,7 @@ public class RollsModEntities {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
     }
+    public static void register(IEventBus eventBus) {
+        ENTITY_TYPES.register(eventBus);
+    }
 }
-
