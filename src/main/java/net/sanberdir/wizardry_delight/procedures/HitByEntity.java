@@ -40,6 +40,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.Comparator;
 import java.util.List;
@@ -77,13 +78,13 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SMOKED_HAM.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.NOODLE_SOUP.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
@@ -119,13 +120,13 @@ public class HitByEntity {
                 }
             }
             if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_BEEF));
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.BEEF_STEW.get()));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_BEEF));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.BEEF_PATTY.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
@@ -291,7 +292,7 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_CHICKEN));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.CHICKEN_SOUP.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
@@ -304,7 +305,7 @@ public class HitByEntity {
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_CHICKEN));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.ROAST_CHICKEN.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
@@ -350,7 +351,7 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.HONEY_BOTTLE));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.HONEY_COOKIE.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
@@ -396,7 +397,7 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_MUTTON));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.MUTTON_WRAP.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
@@ -409,7 +410,7 @@ public class HitByEntity {
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_MUTTON));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.COOKED_MUTTON_CHOPS.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
@@ -485,28 +486,6 @@ public class HitByEntity {
         }
 
 
-        if (!world.getEntitiesOfClass(Skeleton.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
-            {
-                Entity _ent = ((Entity) world.getEntitiesOfClass(Skeleton.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).stream().sorted(new Object() {
-                    Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-                        return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-                    }
-                }.compareDistOf(x, y, z)).findFirst().orElse(null));
-                if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-                    _ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-                            _ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), "kill");
-                }
-            }
-            if (Math.random() <= 0.4) {
-                if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.SKELETON_SKULL));
-                    entityToSpawn.setPickUpDelay(10);
-                    _level.addFreshEntity(entityToSpawn);
-                }
-            }
-        }
-
-
         if (!world.getEntitiesOfClass(WitherSkeleton.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             {
                 Entity _ent = ((Entity) world.getEntitiesOfClass(WitherSkeleton.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).stream().sorted(new Object() {
@@ -552,7 +531,7 @@ public class HitByEntity {
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_RABBIT));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.RABBIT_STEW));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
@@ -605,17 +584,83 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_COD));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.BAKED_COD_STEW.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_COD));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.COD_ROLL.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
                 }
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ParticleTypes.LARGE_SMOKE, x, y, z, 20, 1, 1, 1, 1);
+        }
+        if (!world.getEntitiesOfClass(Squid.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+            if (!entity.level.isClientSide())
+                entity.discard();
+            if (world instanceof Level _level) {
+                if (!_level.isClientSide()) {
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.squid.death")), SoundSource.NEUTRAL, 1, 1);
+                } else {
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.squid.death")), SoundSource.NEUTRAL, 1, 1, false);
+                }
+            }
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.INK_SAC));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.75) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SQUID_INK_PASTA.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+                if (Math.random() < 0.75) {
+                    if (world instanceof Level _level && !_level.isClientSide()) {
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SQUID_INK_PASTA.get()));
+                        entityToSpawn.setPickUpDelay(10);
+                        _level.addFreshEntity(entityToSpawn);
+                    }
+                }
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ParticleTypes.LARGE_SMOKE, x, y, z, 20, 1, 1, 1, 1);
+        }
+        if (!world.getEntitiesOfClass(Skeleton.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+            if (!entity.level.isClientSide())
+                entity.discard();
+            if (world instanceof Level _level) {
+                if (!_level.isClientSide()) {
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.skeleton.death")), SoundSource.NEUTRAL, 1, 1);
+                } else {
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.skeleton.death")), SoundSource.NEUTRAL, 1, 1, false);
+                }
+            }
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.BONE_BROTH.get()));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.75) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.BONE_BROTH.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+
+                }
+                if (Math.random() < 0.75) {
+                    if (world instanceof Level _level && !_level.isClientSide()) {
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.SKELETON_SKULL));
+                        entityToSpawn.setPickUpDelay(10);
+                        _level.addFreshEntity(entityToSpawn);
+                    }
+                }
+
             }
             if (world instanceof ServerLevel _level)
                 _level.sendParticles(ParticleTypes.LARGE_SMOKE, x, y, z, 20, 1, 1, 1, 1);
@@ -638,13 +683,13 @@ public class HitByEntity {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_SALMON));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SALMON_ROLL.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_SALMON));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.GRILLED_SALMON.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
@@ -712,19 +757,19 @@ public class HitByEntity {
                 }
             }
             if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SMOKED_HAM.get()));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.SMOKED_HAM.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COOKED_PORKCHOP));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.HONEY_GLAZED_HAM_BLOCK.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }

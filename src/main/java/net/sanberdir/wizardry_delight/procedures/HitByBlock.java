@@ -24,6 +24,8 @@ import net.minecraft.core.BlockPos;
 import net.sanberdir.wizardry_delight.entity.custom.StarBall;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
+import vectorwing.farmersdelight.common.registry.ModBlocks;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import javax.annotation.Nullable;
 
@@ -138,25 +140,134 @@ public class HitByBlock {
             }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.PUMPKIN_PIE));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
                     if (Math.random() < 0.75) {
                         if (world instanceof Level _level && !_level.isClientSide()) {
-                            ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.PUMPKIN_PIE));
+                            ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SOUP.get()));
                             entityToSpawn.setPickUpDelay(10);
                             _level.addFreshEntity(entityToSpawn);
                         }
                         if (Math.random() < 0.75) {
                             if (world instanceof Level _level && !_level.isClientSide()) {
-                                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.PUMPKIN_PIE));
+                                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get()));
                                 entityToSpawn.setPickUpDelay(10);
                                 _level.addFreshEntity(entityToSpawn);
                             }
                         }
                     }
                 }
+            {
+                int _value = 3;
+                BlockPos _pos = new BlockPos(x, y, z);
+                BlockState _bs = world.getBlockState(_pos);
+                if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+                    world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+            if (Math.random() < 0.15) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+        }
+
+        if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.CARVED_PUMPKIN)
+        {
+            world.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
+
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get()));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.25) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.STUFFED_PUMPKIN_BLOCK.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+            {
+                int _value = 3;
+                BlockPos _pos = new BlockPos(x, y, z);
+                BlockState _bs = world.getBlockState(_pos);
+                if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+                    world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+            if (Math.random() < 0.15) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+        }
+
+        if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == ModBlocks.WILD_POTATOES.get())
+        {
+            world.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
+
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.TOMATO_SAUCE.get()));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.25) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.TOMATO_SAUCE.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+            {
+                int _value = 3;
+                BlockPos _pos = new BlockPos(x, y, z);
+                BlockState _bs = world.getBlockState(_pos);
+                if (_bs.getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _integerProp && _integerProp.getPossibleValues().contains(_value))
+                    world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+            if (Math.random() < 0.15) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+        }
+
+        if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.MELON)
+        {
+            world.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
+
+            if (world instanceof Level _level && !_level.isClientSide()) {
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.MELON_SLICE));
+                entityToSpawn.setPickUpDelay(10);
+                _level.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.75) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.MELON_JUICE.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+                if (Math.random() < 0.75) {
+                    if (world instanceof Level _level && !_level.isClientSide()) {
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.MELON_POPSICLE.get()));
+                        entityToSpawn.setPickUpDelay(10);
+                        _level.addFreshEntity(entityToSpawn);
+                    }
+                }
+            }
             {
                 int _value = 3;
                 BlockPos _pos = new BlockPos(x, y, z);
@@ -187,13 +298,13 @@ public class HitByBlock {
             }
             if (Math.random() < 0.75) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BREAD));
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.WHEAT_DOUGH.get()));
                     entityToSpawn.setPickUpDelay(10);
                     _level.addFreshEntity(entityToSpawn);
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BREAD));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.EGG_SANDWICH.get()));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
