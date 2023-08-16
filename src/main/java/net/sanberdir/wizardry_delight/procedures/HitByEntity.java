@@ -11,9 +11,10 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
+import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
@@ -37,7 +38,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
@@ -694,6 +694,62 @@ public class HitByEntity {
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
+                }
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+        }
+
+        if (!world.getEntitiesOfClass(Creeper.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+            if (!entity.level.isClientSide())
+                entity.discard();
+            if (world instanceof ServerLevel _level) {
+                Entity entityToSpawn = new Frog(EntityType.FROG, _level);
+                entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+                if (entityToSpawn instanceof Mob _mobToSpawn)
+                    _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+                world.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.35) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+            if (world instanceof Level _level) {
+                if (!_level.isClientSide()) {
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.frog.ambient")), SoundSource.NEUTRAL, 1, 1);
+                } else {
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.frog.ambient")), SoundSource.NEUTRAL, 1, 1, false);
+                }
+            }
+            if (world instanceof ServerLevel _level)
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+        }
+
+        if (!world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+            if (!entity.level.isClientSide())
+                entity.discard();
+            if (world instanceof ServerLevel _level) {
+                Entity entityToSpawn = new Frog(EntityType.FROG, _level);
+                entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+                if (entityToSpawn instanceof Mob _mobToSpawn)
+                    _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+                world.addFreshEntity(entityToSpawn);
+            }
+            if (Math.random() < 0.35) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            }
+            if (world instanceof Level _level) {
+                if (!_level.isClientSide()) {
+                    _level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.frog.ambient")), SoundSource.NEUTRAL, 1, 1);
+                } else {
+                    _level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.frog.ambient")), SoundSource.NEUTRAL, 1, 1, false);
                 }
             }
             if (world instanceof ServerLevel _level)
