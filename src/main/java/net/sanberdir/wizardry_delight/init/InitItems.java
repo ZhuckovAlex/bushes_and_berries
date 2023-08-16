@@ -16,6 +16,7 @@ import net.sanberdir.wizardry_delight.armor.ModArmorMaterials;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -165,6 +166,9 @@ public class InitItems {
 
     public static final RegistryObject<Item> SPARKLING_POLLEN = ITEMS.register("sparkling_pollen",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> RING_SUPPLY = ITEMS.register("ring_supply",
+            () -> new RingSupply(new Item.Properties().stacksTo(1).durability(40).tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> CRIMSON_BONE_MEAL = ITEMS.register("crimson_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

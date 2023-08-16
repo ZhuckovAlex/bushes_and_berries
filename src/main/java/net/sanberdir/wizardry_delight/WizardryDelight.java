@@ -14,6 +14,7 @@ import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -35,6 +36,8 @@ import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
 import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import software.bernie.geckolib3.GeckoLib;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -80,7 +83,8 @@ public class WizardryDelight
     }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+                () ->  SlotTypePreset.RING.getMessageBuilder().build());
     }
 
 
@@ -115,6 +119,7 @@ public class WizardryDelight
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
             event.enqueueWork(() -> {
                 ComposterBlock.COMPOSTABLES.put(InitItems.MEADOW_GOLDEN_FLOWER.get(), 0.2f);
                 ComposterBlock.COMPOSTABLES.put(InitItems.ROSE_OF_GHOSTY_TEARS.get(), 0.2f);

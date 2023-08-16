@@ -32,7 +32,7 @@ public class StombleRose extends Block implements net.minecraftforge.common.IPla
         if (blockstate.is(this)) {
             return false;
         } else {
-            if (blockstate.is(Blocks.SOUL_SAND)|| blockstate.is(Blocks.SOUL_SOIL))  {
+            if (blockstate.is(Blocks.SOUL_SOIL))  {
                 BlockPos blockpos = p_57177_.below();
 
                 return true;
