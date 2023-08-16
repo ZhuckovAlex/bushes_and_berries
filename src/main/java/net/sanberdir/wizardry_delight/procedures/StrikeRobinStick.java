@@ -19,6 +19,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.entity.custom_abstract.AbstractHurtingProjectileMod;
 import net.sanberdir.wizardry_delight.entity.ModEntities;
 import net.sanberdir.wizardry_delight.entity.custom.StarBall;
@@ -32,8 +33,8 @@ public class StrikeRobinStick {
     public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
         if (event.getHand() != event.getEntity().getUsedItemHand())
             return;
-        execute(event, event.getEntity(),event.getItemStack(),event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ());
 
+            execute(event, event.getEntity(), event.getItemStack(), event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ());
 
     }
 

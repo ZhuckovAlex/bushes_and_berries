@@ -53,6 +53,8 @@ public class StarBall extends AbstractHurtingProjectileMod implements ItemSuppli
             });
         }
     }
+
+
     @Override
     @OnlyIn(Dist.CLIENT)
     public ItemStack getItem() {

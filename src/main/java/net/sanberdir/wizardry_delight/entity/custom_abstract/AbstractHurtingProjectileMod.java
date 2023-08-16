@@ -77,17 +77,17 @@ public class AbstractHurtingProjectileMod extends Projectile {
             double d2 = this.getZ() + vec3.z;
             ProjectileUtil.rotateTowardsMovement(this, 0.2F);
             float f = this.getInertia();
-            if (this.isInWater()) {
-                for(int i = 0; i < 4; ++i) {
-                    float f1 = 0.25F;
-                    this.level.addParticle(ModParticles.ROBIN_STAR_PARTICLES.get(), d0 - vec3.x * 0.25D, d1 - vec3.y * 0.25D, d2 - vec3.z * 0.25D, vec3.x, vec3.y, vec3.z);
-                }
-
-                f = 0.8F;
-            }
+//            if (this.isInWater()) {
+//                for(int i = 0; i < 4; ++i) {
+//                    float f1 = 0.25F;
+//                    this.level.addParticle(ModParticles.ROBIN_STAR_PARTICLES.get(), d0 - vec3.x * 0.05D, d1 - vec3.y * 0.05D, d2 - vec3.z * 0.05D, vec3.x, vec3.y, vec3.z);
+//                }
+//
+//                f = 0.8F;
+//            }
 
             this.setDeltaMovement(vec3.add(this.xPower, this.yPower, this.zPower).scale((double)f));
-            this.level.addParticle(this.getTrailParticle(), d0, d1 + 0.5D, d2, 0.0D, 0.0D, 0.0D);
+            this.level.addParticle(this.getTrailParticle(), d0, d1 + 0.10D, d2, 0.0D, 0.0D, 0.0D);
             this.setPos(d0, d1, d2);
         } else {
             this.discard();

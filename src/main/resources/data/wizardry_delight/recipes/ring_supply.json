@@ -6,11 +6,14 @@
       "item": "minecraft:apple"
     },
     "B": {
-      "item": "wizardry_delight:clear_dragolit_nugget"
+      "item": "wizardry_delight:dragolit_ingot"
+    },
+    "C": {
+      "item": "wizardry_delight:sparkling_pollen"
     }
   },
   "pattern": [
-    " A ",
+    "CAC",
     "B B",
     " B "
   ],

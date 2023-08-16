@@ -373,7 +373,7 @@ public class HitByBlock {
                 }
                 if (Math.random() < 0.75) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.EGG_SANDWICH.get()));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BREAD));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
