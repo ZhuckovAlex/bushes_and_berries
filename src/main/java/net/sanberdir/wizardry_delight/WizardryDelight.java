@@ -135,6 +135,7 @@ public class WizardryDelight
 
                 BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                         InitItems.WARPED_WART.get(), Potions.AWKWARD));
+
             });
         }
     }

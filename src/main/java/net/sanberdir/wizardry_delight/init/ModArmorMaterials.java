@@ -11,7 +11,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    HAT("hat", 28, new int[]{5, 5, 8, 3}, 19, SoundEvents.ARMOR_EQUIP_LEATHER,
+    HAT("hat", 28, new int[]{5, 5, 8, 5}, 19, SoundEvents.ARMOR_EQUIP_LEATHER,
             4.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET.get()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
