@@ -1,6 +1,10 @@
 package net.sanberdir.wizardry_delight.entity.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.BlockCollisions;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
@@ -40,20 +44,29 @@ public class StarBall extends AbstractHurtingProjectileMod implements ItemSuppli
         Entity entity = p_37386_.getEntity();
         if (!this.level.isClientSide) {
             HitByEntity.execute(level,getX(),getY(),getZ(),entity);
-                this.discard();
+            this.discard();
         }
     }
 
     protected void onHitBlock(BlockHitResult p_37384_) {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
-            HitByBlock.execute(level,getX(),getY(),getZ());
+
+            HitByBlock.execute(level,getX(),getY(),getZ(),getBlockStateOn());
             WizardryDelight.queueServerWork(2, () -> {
                 this.discard();
-            });
+        });
         }
     }
 
+    @Override
+    protected void onInsideBlock(BlockState p_20005_) {
+        super.onInsideBlock(p_20005_);
+
+        if (!this.level.isClientSide) {
+            HitByBlock.execute(level,getX(),getY(),getZ(),getBlockStateOn());
+        }
+    }
 
     @Override
     @OnlyIn(Dist.CLIENT)

@@ -1,21 +1,22 @@
-package net.sanberdir.wizardry_delight.armor.entity.custom;
-
+package net.sanberdir.wizardry_delight.armor.entity.custom.armor;
 import net.minecraft.resources.ResourceLocation;
 import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class HatArmorModel extends AnimatedGeoModel<HatArmorItem> {
-
+public class HatModel extends AnimatedGeoModel<HatArmorItem> {
+    @Override
     public ResourceLocation getModelResource(HatArmorItem object) {
-        return new ResourceLocation(WizardryDelight.MODID, "geo/hat.geo.json");
+        return new ResourceLocation(WizardryDelight.MODID, "geo/hat_armor.geo.json");
     }
 
+    @Override
     public ResourceLocation getTextureResource(HatArmorItem object) {
-        return new ResourceLocation(WizardryDelight.MODID, "textures/models/armor/hat.png");
+        return new ResourceLocation(WizardryDelight.MODID, "textures/models/armor/hat_armor_texture.png");
     }
 
+    @Override
     public ResourceLocation getAnimationResource(HatArmorItem animatable) {
-        return new ResourceLocation(WizardryDelight.MODID, "animations/armor.animation.json");
+        return new ResourceLocation(WizardryDelight.MODID, "animations/armor_animation.json");
     }
 }

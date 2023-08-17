@@ -6,17 +6,14 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-import net.sanberdir.wizardry_delight.armor.ModArmorMaterials;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
-import top.theillusivec4.curios.api.SlotTypePreset;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -256,7 +253,7 @@ public class InitItems {
 
     public static final RegistryObject<Item> HAT_HELMET = ITEMS.register("hat_helmet",
             () -> new HatArmorItem(ModArmorMaterials.HAT, EquipmentSlot.HEAD,
-                    new Item.Properties()));
+                    new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

@@ -8,12 +8,13 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-import net.sanberdir.wizardry_delight.armor.entity.custom.HatArmorRenderer;
+import net.sanberdir.wizardry_delight.armor.entity.custom.armor.HatArmorRenderer;
 import net.sanberdir.wizardry_delight.init.customblock.FlameLeavesApple;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticles;
 import net.sanberdir.wizardry_delight.particle.custom.StombleRoseParticles;
+import software.bernie.geckolib3.item.GeoArmorItem;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = WizardryDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)

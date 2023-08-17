@@ -1,4 +1,4 @@
-package net.sanberdir.wizardry_delight.armor;
+package net.sanberdir.wizardry_delight.init;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -7,13 +7,12 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-import net.sanberdir.wizardry_delight.init.InitItems;
 
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    HAT("hat", 900, new int[]{13, 5, 8, 11}, 19, SoundEvents.ARMOR_EQUIP_LEATHER,
-            0.0F, 0.0F, () -> Ingredient.of(InitItems.FIRE_STEM.get()));
+    HAT("hat", 28, new int[]{5, 5, 8, 3}, 19, SoundEvents.ARMOR_EQUIP_LEATHER,
+            4.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET.get()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
