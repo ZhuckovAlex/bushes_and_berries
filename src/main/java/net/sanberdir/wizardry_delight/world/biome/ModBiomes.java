@@ -1,11 +1,6 @@
 package net.sanberdir.wizardry_delight.world.biome;
 
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.data.BuiltinRegistries;
-import net.minecraft.data.worldgen.biome.EndBiomes;
-import net.minecraft.data.worldgen.biome.NetherBiomes;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
