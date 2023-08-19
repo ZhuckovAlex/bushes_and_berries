@@ -7,10 +7,12 @@ import net.sanberdir.wizardry_delight.init.InitBlocks;
 public class AppleBlockProcedure {
 
     public static void execute(LevelAccessor world, double x, double y, double z) {
-            if (Math.random() <= 0.4) {
-                    if ((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR) {
+
+                    if (((world.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
+                            &&((world.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR)) {
                         world.setBlock(new BlockPos(x, y - 1, z), InitBlocks.APPLE_BLOCK.get().defaultBlockState(), 3);
             }
-        }
+
+
     }
 }

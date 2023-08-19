@@ -253,7 +253,11 @@ public class InitItems {
 
     public static final RegistryObject<Item> HAT_HELMET = ITEMS.register("hat_helmet",
             () -> new HatArmorItem(ModArmorMaterials.HAT, EquipmentSlot.HEAD,
-                    new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+                    new Item.Properties().durability(105).tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> HAT_HELMET_CLEAR = ITEMS.register("hat_helmet_clear",
+            () -> new ClearHatArmorItem(ModArmorMaterials.HAT_CLEAR, EquipmentSlot.HEAD,
+                    new Item.Properties().durability(105).tab(ModCreativeModeTab.BUSHES)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

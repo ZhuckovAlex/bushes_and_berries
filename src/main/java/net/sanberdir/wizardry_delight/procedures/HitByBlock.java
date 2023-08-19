@@ -137,7 +137,7 @@ public class HitByBlock {
         if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == Blocks.POPPY) {
             world.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
             if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BEETROOT));
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BEETROOT, 3));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }
@@ -164,23 +164,23 @@ public class HitByBlock {
                 world.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
 
                 if (world instanceof Level _level && !_level.isClientSide()) {
-                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.PUMPKIN_PIE));
+                ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.PUMPKIN_PIE,3));
                 entityToSpawn.setPickUpDelay(10);
                 _level.addFreshEntity(entityToSpawn);
             }
-                if (Math.random() < 0.75) {
+                if (Math.random() < 0.50) {
                     if (world instanceof Level _level && !_level.isClientSide()) {
-                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get()));
+                        ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get(),2));
                         entityToSpawn.setPickUpDelay(10);
                         _level.addFreshEntity(entityToSpawn);
                     }
-                    if (Math.random() < 0.75) {
+                    if (Math.random() < 0.50) {
                         if (world instanceof Level _level && !_level.isClientSide()) {
                             ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SOUP.get()));
                             entityToSpawn.setPickUpDelay(10);
                             _level.addFreshEntity(entityToSpawn);
                         }
-                        if (Math.random() < 0.75) {
+                        if (Math.random() < 0.50) {
                             if (world instanceof Level _level && !_level.isClientSide()) {
                                 ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(ModItems.PUMPKIN_SLICE.get()));
                                 entityToSpawn.setPickUpDelay(10);

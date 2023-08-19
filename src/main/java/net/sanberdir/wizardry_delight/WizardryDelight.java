@@ -1,13 +1,9 @@
 package net.sanberdir.wizardry_delight;
 
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
@@ -33,11 +29,13 @@ import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
+import net.sanberdir.wizardry_delight.world.biome.ModBiomes;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
 import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import software.bernie.geckolib3.GeckoLib;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
@@ -72,6 +70,7 @@ public class WizardryDelight
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModBiomes.register(modEventBus);
         ModWDEffects.register(modEventBus);
         CustomSoundEvents.register(modEventBus);
         ModParticles.register(modEventBus);
@@ -135,6 +134,9 @@ public class WizardryDelight
 
                 BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                         InitItems.WARPED_WART.get(), Potions.AWKWARD));
+
+                BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe2(Potions.WATER,
+                        Items.COCOA_BEANS, ModItems.HOT_COCOA.get()));
 
             });
         }

@@ -45,6 +45,7 @@ public class AppleBlock extends Block implements net.minecraftforge.common.IPlan
     }
 
     public void randomTick(BlockState p_222548_, ServerLevel p_222549_, BlockPos p_222550_, RandomSource p_222551_) {
+
         if (p_222549_.isEmptyBlock(p_222550_.above())) {
             int i;
             for(i = 1; p_222549_.getBlockState(p_222550_.below(i)).is(this); ++i) {

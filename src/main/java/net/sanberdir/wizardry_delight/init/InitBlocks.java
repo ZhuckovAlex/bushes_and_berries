@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -66,9 +67,20 @@ public class InitBlocks {
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> STRIPPED_APPLE_WOOD = registerBlock("stripped_apple_wood",
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
-    public static final RegistryObject<Block> APPLE_LEAVES = registerBlockWithoutBlockItem("apple_leaves",
-            () -> new FlameLeavesApple(BlockBehaviour.Properties.of(Material.LEAVES)
-                    .strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion()));
+    public static final RegistryObject<Block> APPLE_LEAVES = registerAppleLeaves("apple_leaves",
+            () -> Items.APPLE);
+    private static RegistryObject<Block> registerAppleLeaves(String name, Supplier<Item> fruit) {
+        final RegistryObject<Block> BLOCK = BLOCKS.register(name, () -> new FlameLeavesApple(BlockBehaviour.Properties.of(Material.LEAVES)
+                .strength(0.2F)
+                .randomTicks()
+                .sound(SoundType.GRASS)
+                .noOcclusion()
+                .isSuffocating((p1, p2, p3) -> false)
+                .isViewBlocking((p1, p2, p3) -> false),
+                fruit
+        ));
+        return BLOCK;
+    }
     public static final RegistryObject<Block> APPLE_SAPLING = registerBlockWithoutBlockItem("apple_sapling",
             () -> new FlameSaplings(new AppleTree(), BlockBehaviour.Properties.of(Material.PLANT).noCollission()
                     .randomTicks().instabreak().sound(SoundType.GRASS)));

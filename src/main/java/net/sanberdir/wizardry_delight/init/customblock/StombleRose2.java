@@ -12,6 +12,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -19,10 +20,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.sanberdir.wizardry_delight.WizardryDelight;
+import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.procedures.SoulStoneCharged;
 import net.sanberdir.wizardry_delight.procedures.StombleRoseActive;
@@ -34,6 +37,11 @@ public class StombleRose2 extends Block implements net.minecraftforge.common.IPl
     public StombleRose2(Properties p_49795_) {
         super(p_49795_);
     }
+    @Override
+    public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
+        return new ItemStack(InitItems.ROSE_OF_THE_MURDERER.get());
+    }
+
     public boolean canSurvive(BlockState p_57175_, LevelReader p_57176_, BlockPos p_57177_) {
         BlockState soil = p_57176_.getBlockState(p_57177_.below());
 

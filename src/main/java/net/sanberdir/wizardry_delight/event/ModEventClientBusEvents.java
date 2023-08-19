@@ -8,8 +8,10 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.sanberdir.wizardry_delight.WizardryDelight;
+import net.sanberdir.wizardry_delight.armor.entity.custom.armor.ClearHatArmorRenderer;
 import net.sanberdir.wizardry_delight.armor.entity.custom.armor.HatArmorRenderer;
 import net.sanberdir.wizardry_delight.init.customblock.FlameLeavesApple;
+import net.sanberdir.wizardry_delight.init.customitem.ClearHatArmorItem;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticles;
@@ -22,6 +24,7 @@ public class ModEventClientBusEvents {
     @SubscribeEvent
     public static void registerArmorRenderers(final EntityRenderersEvent.AddLayers event) {
         GeoArmorRenderer.registerArmorRenderer(HatArmorItem.class, new HatArmorRenderer());
+        GeoArmorRenderer.registerArmorRenderer(ClearHatArmorItem.class, new ClearHatArmorRenderer());
     }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientSideHandler {
