@@ -3,15 +3,21 @@ package net.sanberdir.wizardry_delight.world.feature;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.RandomSpreadFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.BendingTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -73,12 +79,13 @@ public class ModConfiguredFeatures {
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> APPLE_TREE =
             CONFIGURED_FEATURES.register("apple_tree", () ->
-                    new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                            BlockStateProvider.simple(InitBlocks.APPLE_LOG.get()),
-                            new StraightTrunkPlacer(5, 6, 3),
-                            BlockStateProvider.simple(InitBlocks.APPLE_LEAVES.get()),
-                            new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 4),
-                            new TwoLayersFeatureSize(1, 0, 2)).build()));
+                    new ConfiguredFeature<>( Feature.TREE, (
+                            new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(InitBlocks.APPLE_LOG.get()),
+                                    new BendingTrunkPlacer(4, 2, 0, 3, UniformInt.of(1, 2)),
+                                    new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(InitBlocks.APPLE_LEAVES.get().defaultBlockState(), 3)
+                                            .add(InitBlocks.APPLE_LEAVES.get().defaultBlockState(), 1)),
+                                    new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
+                                    new TwoLayersFeatureSize(1, 0, 1))).dirt(BlockStateProvider.simple(Blocks.ROOTED_DIRT)).forceDirt().build()));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> APPLE_SPAWN =
             CONFIGURED_FEATURES.register("apple_spawn", () -> new ConfiguredFeature<>(Feature.RANDOM_SELECTOR,

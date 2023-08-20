@@ -24,6 +24,7 @@ import net.sanberdir.wizardry_delight.entity.ModEntities;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 
+import net.sanberdir.wizardry_delight.init.InitPaintings;
 import net.sanberdir.wizardry_delight.init.ModCreativeModeTab;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
@@ -69,6 +70,7 @@ public class WizardryDelight
         ITEMS.register(modEventBus);
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
+        InitPaintings.register(modEventBus);
         ModEntities.register(modEventBus);
         ModBiomes.register(modEventBus);
         ModWDEffects.register(modEventBus);

@@ -78,13 +78,6 @@ public class ChestPillagerProcedure {
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
             }
-            if (Math.random() < 0.3) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(InitItems.SILVERAN.get());
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 1));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-            }
             if (Math.random() < 0.05) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());

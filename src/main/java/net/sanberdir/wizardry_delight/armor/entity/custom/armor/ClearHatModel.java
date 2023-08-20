@@ -8,7 +8,7 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class ClearHatModel extends AnimatedGeoModel<ClearHatArmorItem> {
     @Override
     public ResourceLocation getModelResource(ClearHatArmorItem object) {
-        return new ResourceLocation(WizardryDelight.MODID, "geo/hat_armor.geo.json");
+        return new ResourceLocation(WizardryDelight.MODID, "geo/clear_hat_armor.geo.json");
     }
 
     @Override
