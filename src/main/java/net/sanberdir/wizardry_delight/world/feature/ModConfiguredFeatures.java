@@ -83,8 +83,8 @@ public class ModConfiguredFeatures {
                             new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(InitBlocks.APPLE_LOG.get()),
                                     new BendingTrunkPlacer(4, 2, 0, 3, UniformInt.of(1, 2)),
                                     new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(InitBlocks.APPLE_LEAVES.get().defaultBlockState(), 3)
-                                            .add(InitBlocks.APPLE_LEAVES.get().defaultBlockState(), 1)),
-                                    new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 25),
+                                            .add(InitBlocks.APPLE_LEAVES_NOAPPLE.get().defaultBlockState(), 2)),
+                                    new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(3), ConstantInt.of(2), 50),
                                     new TwoLayersFeatureSize(1, 0, 1))).dirt(BlockStateProvider.simple(Blocks.ROOTED_DIRT)).forceDirt().build()));
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> APPLE_SPAWN =

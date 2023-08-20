@@ -63,6 +63,8 @@ public class InitBlocks {
             () -> new WizardPie(BlockBehaviour.Properties.of(Material.CAKE).strength(0.5F).sound(SoundType.WOOL).randomTicks()), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> APPLE_WOOD = registerBlock("apple_wood",
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
+    public static final RegistryObject<Block> APPLE_LEAVES_NOAPPLE = registerBlockWithoutBlockItem("apple_leaves_noapple",
+            () -> new FlameLeavesNoapple(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> STRIPPED_APPLE_LOG = registerBlock("stripped_apple_log",
             () -> new FlameBlockRotate(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> STRIPPED_APPLE_WOOD = registerBlock("stripped_apple_wood",
@@ -86,6 +88,9 @@ public class InitBlocks {
                     .randomTicks().instabreak().sound(SoundType.GRASS)));
 
     public static final RegistryObject<Block> APPLE_BLOCK = registerBlockWithoutBlockItem("apple_block",
+            () -> new AppleBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission()
+                    .randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> GREEN_APPLE_BLOCK = registerBlockWithoutBlockItem("green_apple_block",
             () -> new AppleBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission()
                     .randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final RegistryObject<Block> APPLE_PLANKS = registerBlock("apple_planks",

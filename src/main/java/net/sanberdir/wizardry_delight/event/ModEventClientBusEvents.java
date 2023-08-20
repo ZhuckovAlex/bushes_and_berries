@@ -11,6 +11,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.armor.entity.custom.armor.ClearHatArmorRenderer;
 import net.sanberdir.wizardry_delight.armor.entity.custom.armor.HatArmorRenderer;
 import net.sanberdir.wizardry_delight.init.customblock.FlameLeavesApple;
+import net.sanberdir.wizardry_delight.init.customblock.FlameLeavesNoapple;
 import net.sanberdir.wizardry_delight.init.customitem.ClearHatArmorItem;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
@@ -31,6 +32,7 @@ public class ModEventClientBusEvents {
         @SubscribeEvent
         public static void blockColorLoad(RegisterColorHandlersEvent.Block event) {
             FlameLeavesApple.blockColorLoad(event);
+            FlameLeavesNoapple.blockColorLoad(event);
         }
         @SubscribeEvent
         public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {

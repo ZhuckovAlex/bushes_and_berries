@@ -47,7 +47,7 @@ import static net.sanberdir.wizardry_delight.init.customblock.BlueBerries.AGE;
 import static net.sanberdir.wizardry_delight.init.customblock.FreezeBerries.MAX_AGE;
 
 public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
-    public static final int MAX_AGE = 2;
+    public static final int MAX_AGE = 4;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
     private final Supplier<Item> FRUIT;
     public FlameLeavesApple(Properties  pProperties, Supplier<Item> fruit) {
@@ -136,11 +136,18 @@ public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
         int x = pPos.getX();
         int y = pPos.getY();
         int z = pPos.getZ();
-
         if (age == MAX_AGE) {
             if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR)) {
+                pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
+                BlockState blockstate = pState.setValue(AGE, 0);
+                pLevel.setBlock(pPos, blockstate, 2);
+            }
+            else if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
+                    &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.GREEN_APPLE_BLOCK.get())) {
                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.APPLE_BLOCK.get().defaultBlockState(), 3);
+                BlockState blockstate = pState.setValue(AGE, 0);
+                pLevel.setBlock(pPos, blockstate, 2);
             }
             BlockState blockstate = pState.setValue(AGE, 0);
             pLevel.setBlock(pPos, blockstate, 2);
@@ -169,7 +176,17 @@ public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
         } else if (age == MAX_AGE) {
              if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
                      &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR)) {
+                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
+                 BlockState blockstate = pState.setValue(AGE, 0);
+                 pLevel.setBlock(pPos, blockstate, 2);
+                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+             }
+            else if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
+                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.GREEN_APPLE_BLOCK.get())) {
                  pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.APPLE_BLOCK.get().defaultBlockState(), 3);
+                 BlockState blockstate = pState.setValue(AGE, 0);
+                 pLevel.setBlock(pPos, blockstate, 2);
+                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
              }
              BlockState blockstate = pState.setValue(AGE, 0);
              pLevel.setBlock(pPos, blockstate, 2);

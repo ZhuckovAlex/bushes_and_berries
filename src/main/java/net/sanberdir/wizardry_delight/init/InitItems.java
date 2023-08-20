@@ -4,6 +4,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -11,6 +12,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.WizardryDelight;
+import net.sanberdir.wizardry_delight.entity.custom.BoatType;
+import net.sanberdir.wizardry_delight.entity.custom.CustomBoat;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
@@ -60,6 +63,10 @@ public class InitItems {
 
     public static final RegistryObject<Item> APPLE_LEAVES = ITEMS.register("apple_leaves",
             () -> new ItemNameBlockItem(InitBlocks.APPLE_LEAVES.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES))));
+
+    public static final RegistryObject<Item> APPLE_LEAVES_NOAPPLE = ITEMS.register("apple_leaves_noapple",
+            () -> new ItemNameBlockItem(InitBlocks.APPLE_LEAVES_NOAPPLE.get(),(new Item.Properties())));
+
 
     public static final RegistryObject<Item> APPLE_SAPLING = ITEMS.register("apple_sapling",
             () -> new ItemNameBlockItem(InitBlocks.APPLE_SAPLING.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES))));
@@ -171,6 +178,9 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> WARPED_BONE_MEAL = ITEMS.register("warped_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> APPLE_BOAT = ITEMS.register("apple_boat",
+            () -> new BoatItem(false, Boat.Type.OAK, new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
    public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

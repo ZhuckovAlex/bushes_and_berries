@@ -44,5 +44,15 @@ public class ModTrades {
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 40),
                         new ItemStack(InitItems.HAT_HELMET_CLEAR.get()), 5, 30, 0f));
+
+        event.getGenericTrades()
+                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
+                        new ItemStack(Items.EMERALD, 10), 10, 10, 0f));
+        event.getGenericTrades()
+                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
+                        new ItemStack(Items.EMERALD, 12), 10, 10, 0f));
+        event.getGenericTrades()
+                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
+                        new ItemStack(Items.EMERALD, 15), 10, 10, 0f));
     }
 }
