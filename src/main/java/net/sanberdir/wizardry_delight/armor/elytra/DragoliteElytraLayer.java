@@ -12,13 +12,13 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.sanberdir.wizardry_delight.WizardryDelight;
 
 @OnlyIn(Dist.CLIENT)
-public class NetheriteElytraLayer
+public class DragoliteElytraLayer
         extends ElytraLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
 
     private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MODID,
             "textures/entity/nezydra.png");
 
-    public NetheriteElytraLayer(
+    public DragoliteElytraLayer(
             RenderLayerParent<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> rendererIn,
             EntityModelSet modelSet) {
         super(rendererIn, modelSet);

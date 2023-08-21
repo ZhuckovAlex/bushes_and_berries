@@ -29,6 +29,9 @@ public class InitBlocks {
     public static final RegistryObject<Block> DRYER = registerBlockWithoutBlockItem("dryer",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion()));
 
+    public static final RegistryObject<Block> COASTAL_STEEP = registerBlock("coastal_steep",
+            () -> new CoastalSteepBlock(BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()), ModCreativeModeTab.BUSHES);
+
     public static final RegistryObject<Block> CHARNIKA = registerBlockWithoutBlockItem("charnika",
             () -> new BlackBerries(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
     public static final RegistryObject<Block> YADOGA = registerBlockWithoutBlockItem("yadoga",

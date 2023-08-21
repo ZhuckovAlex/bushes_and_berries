@@ -11,7 +11,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -35,8 +34,8 @@ import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.sanberdir.wizardry_delight.armor.elytra.NetheriteElytraArmorStandLayer;
-import net.sanberdir.wizardry_delight.armor.elytra.NetheriteElytraLayer;
+import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraArmorStandLayer;
+import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraLayer;
 import net.sanberdir.wizardry_delight.entity.ModEntities;
 import net.sanberdir.wizardry_delight.init.*;
 
@@ -73,7 +72,7 @@ public class WizardryDelight
     public static final Logger LOGGER = LogManager.getLogger();
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> SOUL_STONE_DISCHARGED = ITEMS.register("soul_stone_discharged", () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
-    public static final RegistryObject<Item> MAG_ELITRA =  ITEMS.register("mag_elitra", () ->new ModElytra(ModArmorMaterials.ELITRA, EquipmentSlot.CHEST, new Item.Properties().durability(3000).tab(ModCreativeModeTab.BUSHES).fireResistant()));
+    public static final RegistryObject<Item> MAG_ELITRA =  ITEMS.register("mag_elitra", () ->new ModElytra(ModArmorMaterials.ELITRA, EquipmentSlot.CHEST, new Item.Properties().durability(1200).tab(ModCreativeModeTab.BUSHES).fireResistant()));
 
     // Directly reference a slf4j logger
 
@@ -84,12 +83,12 @@ public class WizardryDelight
             addLayersEvent.getSkins().forEach(s -> {
                 LivingEntityRenderer<? extends Player, ? extends EntityModel<? extends Player>> livingEntityRenderer = addLayersEvent.getSkin(s);
                 if(livingEntityRenderer instanceof PlayerRenderer playerRenderer){
-                    playerRenderer.addLayer(new NetheriteElytraLayer(playerRenderer, entityModels));
+                    playerRenderer.addLayer(new DragoliteElytraLayer(playerRenderer, entityModels));
                 }
             });
             LivingEntityRenderer<ArmorStand, ? extends EntityModel<ArmorStand>> livingEntityRenderer = addLayersEvent.getRenderer(EntityType.ARMOR_STAND);
             if(livingEntityRenderer instanceof ArmorStandRenderer armorStandRenderer){
-                armorStandRenderer.addLayer(new NetheriteElytraArmorStandLayer(armorStandRenderer, entityModels));
+                armorStandRenderer.addLayer(new DragoliteElytraArmorStandLayer(armorStandRenderer, entityModels));
             }
 
         }

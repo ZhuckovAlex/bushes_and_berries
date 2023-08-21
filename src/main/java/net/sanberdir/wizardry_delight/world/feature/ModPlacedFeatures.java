@@ -23,6 +23,9 @@ public class ModPlacedFeatures {
             () -> new PlacedFeature(ModConfiguredFeatures.YADOGA.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(5),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
 
+    public static final RegistryObject<PlacedFeature> COASTAL_STEEP_PLACED = PLACED_FEATURES.register("coastal_steep_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.COASTAL_STEEP.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(5),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
     public static final RegistryObject<PlacedFeature> MEADOW_GOLDEN_FLOWER_PLACED = PLACED_FEATURES.register("meadow_golden_flower_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.MEADOW_GOLDEN_FLOWER.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(30),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
@@ -55,7 +58,7 @@ public class ModPlacedFeatures {
                     HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(100)))));
 
    public static final RegistryObject<PlacedFeature> STRANGE_SHIP_ORE_PLACED = PLACED_FEATURES.register("strange_chip_ore_placed",
-            () -> new PlacedFeature(ModConfiguredFeatures.STRANGE_SHIP_ORE.getHolder().get(), commonOrePlacement(2, // VeinsPerChunk
+            () -> new PlacedFeature(ModConfiguredFeatures.STRANGE_SHIP_ORE.getHolder().get(), commonOrePlacement(1, // VeinsPerChunk
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80)))));
 
 

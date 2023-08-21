@@ -12,11 +12,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.sanberdir.wizardry_delight.WizardryDelight;
 
 @OnlyIn(Dist.CLIENT)
-public class NetheriteElytraArmorStandLayer extends ElytraLayer<ArmorStand, ArmorStandArmorModel> {
+public class DragoliteElytraArmorStandLayer extends ElytraLayer<ArmorStand, ArmorStandArmorModel> {
     private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MODID,
             "textures/entity/nezydra.png");
 
-    public NetheriteElytraArmorStandLayer(ArmorStandRenderer armorStandRenderer,
+    public DragoliteElytraArmorStandLayer(ArmorStandRenderer armorStandRenderer,
                                           EntityModelSet entityModelSet) {
         super(armorStandRenderer, entityModelSet);
     }

@@ -51,6 +51,11 @@ public class ModConfiguredFeatures {
                     new RandomPatchConfiguration(10, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(InitBlocks.YADOGA.get()))))));
 
+    public static final RegistryObject<ConfiguredFeature<?, ?>> COASTAL_STEEP = CONFIGURED_FEATURES.register("coastal_steep",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(10, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(InitBlocks.COASTAL_STEEP.get()))))));
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> MEADOW_GOLDEN_FLOWER = CONFIGURED_FEATURES.register("meadow_golden_flower",
             () -> new ConfiguredFeature<>(Feature.FLOWER,
                     new RandomPatchConfiguration(1, 20, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,

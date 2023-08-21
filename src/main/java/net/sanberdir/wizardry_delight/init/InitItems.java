@@ -159,6 +159,15 @@ public class InitItems {
     public static final RegistryObject<Item> JAR = ITEMS.register("jar",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
+    public static final RegistryObject<Item> COASTAL_STEEP_FIBERS = ITEMS.register("coastal_steep_fibers",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+    public static final RegistryObject<Item> COASTAL_STEEP_FLOWER = ITEMS.register("coastal_steep_flower",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+
+    public static final RegistryObject<Item> KRUTNEVY_BREAD = ITEMS.register("krutnevy_bread",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).alwaysEat().fast().build())));
+
+
     public static final RegistryObject<Item> SUGAR_REFINED = ITEMS.register("sugar_refined",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(2).saturationMod(1).alwaysEat().fast().build())));
 
