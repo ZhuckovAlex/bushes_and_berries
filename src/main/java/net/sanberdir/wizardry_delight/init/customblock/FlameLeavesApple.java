@@ -38,6 +38,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.procedures.AppleBlockProcedure;
@@ -48,7 +51,7 @@ import static net.sanberdir.wizardry_delight.init.customblock.FreezeBerries.MAX_
 
 public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
     public static final int MAX_AGE = 4;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_4;
     private final Supplier<Item> FRUIT;
     public FlameLeavesApple(Properties  pProperties, Supplier<Item> fruit) {
         super(pProperties);
@@ -139,21 +142,20 @@ public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
         if (age == MAX_AGE) {
             if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR)) {
+                pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.SMALL_GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
+            }
+            else if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
+                    &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.SMALL_GREEN_APPLE_BLOCK.get())) {
                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
-                BlockState blockstate = pState.setValue(AGE, 0);
-                pLevel.setBlock(pPos, blockstate, 2);
             }
             else if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.GREEN_APPLE_BLOCK.get())) {
                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.APPLE_BLOCK.get().defaultBlockState(), 3);
-                BlockState blockstate = pState.setValue(AGE, 0);
-                pLevel.setBlock(pPos, blockstate, 2);
             }
-            BlockState blockstate = pState.setValue(AGE, 0);
+            BlockState blockstate = pState.setValue(AGE, 1);
             pLevel.setBlock(pPos, blockstate, 2);
         }
     }
-
     @Override
     public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
         return 10;
@@ -172,28 +174,42 @@ public class FlameLeavesApple extends LeavesBlock implements BonemealableBlock {
          int z = pPos.getZ();
 
          if (age != MAX_AGE && pPlayer.getItemInHand(pHand).is(Items.BONE_MEAL)) {
+             if ((((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get()))
+                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.APPLE_BLOCK.get())) {
+                 BlockState blockstate = pState.setValue(AGE, MAX_AGE);
+                 return InteractionResult.SUCCESS;
+             }
             return InteractionResult.PASS;
+
         } else if (age == MAX_AGE) {
+
              if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
                      &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == Blocks.AIR)) {
-                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
-                 BlockState blockstate = pState.setValue(AGE, 0);
+                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.SMALL_GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
+                 BlockState blockstate = pState.setValue(AGE, 1);
                  pLevel.setBlock(pPos, blockstate, 2);
                  pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+                 return InteractionResult.SUCCESS;
              }
-            else if (((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get())
+             else if ((((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get()))
+                     &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.SMALL_GREEN_APPLE_BLOCK.get())) {
+                 pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.GREEN_APPLE_BLOCK.get().defaultBlockState(), 3);
+                 BlockState blockstate = pState.setValue(AGE, 1);
+                 pLevel.setBlock(pPos, blockstate, 2);
+                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+                 return InteractionResult.SUCCESS;
+             }
+             else if ((((pLevel.getBlockState(new BlockPos(x, y, z))).getBlock() == InitBlocks.APPLE_LEAVES.get()))
                      &&((pLevel.getBlockState(new BlockPos(x, y - 1, z))).getBlock() == InitBlocks.GREEN_APPLE_BLOCK.get())) {
                  pLevel.setBlock(new BlockPos(x, y - 1, z), InitBlocks.APPLE_BLOCK.get().defaultBlockState(), 3);
-                 BlockState blockstate = pState.setValue(AGE, 0);
-                 pLevel.setBlock(pPos, blockstate, 2);
-                 pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
+                 BlockState blockstate = pState.setValue(AGE, MAX_AGE);
+                 return InteractionResult.SUCCESS;
              }
-             BlockState blockstate = pState.setValue(AGE, 0);
-             pLevel.setBlock(pPos, blockstate, 2);
-             pLevel.gameEvent(GameEvent.BLOCK_CHANGE, pPos, GameEvent.Context.of(pPlayer, blockstate));
-            return InteractionResult.sidedSuccess(pLevel.isClientSide);
+
+            return InteractionResult.SUCCESS;
         } else {
-            return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+             return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+
         }
     }
 

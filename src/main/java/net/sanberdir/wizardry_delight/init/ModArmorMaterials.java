@@ -14,7 +14,9 @@ public enum ModArmorMaterials implements ArmorMaterial {
     HAT("hat", 28, new int[]{3, 5, 8, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
             3.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET.get())),
     HAT_CLEAR("hat", 28, new int[]{3, 5, 8, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
-            3.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET_CLEAR.get()));
+            3.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET_CLEAR.get())),
+    ELITRA("elitra", 28, new int[]{3, 7, 6, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
+            3.0F, 0.0F, () -> Ingredient.of(WizardryDelight.MAG_ELITRA.get()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;

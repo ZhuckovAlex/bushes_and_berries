@@ -4,7 +4,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,7 +11,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-import net.sanberdir.wizardry_delight.entity.custom.BoatType;
 import net.sanberdir.wizardry_delight.entity.custom.CustomBoat;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
@@ -180,7 +178,7 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> APPLE_BOAT = ITEMS.register("apple_boat",
-            () -> new BoatItem(false, Boat.Type.OAK, new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new ModBoatItem(false, CustomBoat.TypeMod.APPLE, new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
    public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
@@ -264,6 +262,8 @@ public class InitItems {
     public static final RegistryObject<Item> HAT_HELMET = ITEMS.register("hat_helmet",
             () -> new HatArmorItem(ModArmorMaterials.HAT, EquipmentSlot.HEAD,
                     new Item.Properties().durability(105).tab(ModCreativeModeTab.BUSHES)));
+
+
 
     public static final RegistryObject<Item> HAT_HELMET_CLEAR = ITEMS.register("hat_helmet_clear",
             () -> new ClearHatArmorItem(ModArmorMaterials.HAT_CLEAR, EquipmentSlot.HEAD,

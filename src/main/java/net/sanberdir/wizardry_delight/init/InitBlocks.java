@@ -93,6 +93,9 @@ public class InitBlocks {
     public static final RegistryObject<Block> GREEN_APPLE_BLOCK = registerBlockWithoutBlockItem("green_apple_block",
             () -> new AppleBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission()
                     .randomTicks().instabreak().sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> SMALL_GREEN_APPLE_BLOCK = registerBlockWithoutBlockItem("small_green_apple_block",
+            () -> new AppleBlock(BlockBehaviour.Properties.of(Material.PLANT).noCollission()
+                    .randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final RegistryObject<Block> APPLE_PLANKS = registerBlock("apple_planks",
             () -> new FlameBlock(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(2.0F, 3.0F)
                     .sound(SoundType.WOOD)), ModCreativeModeTab.BUSHES);

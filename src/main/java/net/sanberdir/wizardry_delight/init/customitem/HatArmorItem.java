@@ -5,6 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
@@ -34,6 +35,16 @@ public class HatArmorItem extends GeoArmorItem implements IAnimatable {
 
     @Override
     public boolean makesPiglinsNeutral(ItemStack stack, LivingEntity wearer) {
+        return true;
+    }
+
+    @Override
+    public boolean isPiglinCurrency(ItemStack stack) {
+        return super.isPiglinCurrency(stack);
+    }
+
+    @Override
+    public boolean isEnderMask(ItemStack stack, Player player, EnderMan endermanEntity) {
         return true;
     }
 

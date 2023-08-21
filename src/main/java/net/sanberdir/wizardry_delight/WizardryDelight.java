@@ -1,10 +1,24 @@
 package net.sanberdir.wizardry_delight;
 
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.model.geom.EntityModelSet;
+import net.minecraft.client.renderer.entity.ArmorStandRenderer;
+import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.TickEvent;
@@ -17,17 +31,18 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.sanberdir.wizardry_delight.armor.elytra.NetheriteElytraArmorStandLayer;
+import net.sanberdir.wizardry_delight.armor.elytra.NetheriteElytraLayer;
 import net.sanberdir.wizardry_delight.entity.ModEntities;
-import net.sanberdir.wizardry_delight.init.InitBlocks;
-import net.sanberdir.wizardry_delight.init.InitItems;
+import net.sanberdir.wizardry_delight.init.*;
 
-import net.sanberdir.wizardry_delight.init.InitPaintings;
-import net.sanberdir.wizardry_delight.init.ModCreativeModeTab;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
+import net.sanberdir.wizardry_delight.init.customitem.ModElytra;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 import net.sanberdir.wizardry_delight.world.biome.ModBiomes;
@@ -43,7 +58,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 @Mod(WizardryDelight.MODID)
 public class WizardryDelight
 {
@@ -54,17 +70,37 @@ public class WizardryDelight
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-
+    public static final Logger LOGGER = LogManager.getLogger();
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> SOUL_STONE_DISCHARGED = ITEMS.register("soul_stone_discharged", () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
+    public static final RegistryObject<Item> MAG_ELITRA =  ITEMS.register("mag_elitra", () ->new ModElytra(ModArmorMaterials.ELITRA, EquipmentSlot.CHEST, new Item.Properties().durability(3000).tab(ModCreativeModeTab.BUSHES).fireResistant()));
 
     // Directly reference a slf4j logger
 
+    @OnlyIn(Dist.CLIENT)
+    private void registerElytraLayer(EntityRenderersEvent event) {
+        if(event instanceof EntityRenderersEvent.AddLayers addLayersEvent){
+            EntityModelSet entityModels = addLayersEvent.getEntityModels();
+            addLayersEvent.getSkins().forEach(s -> {
+                LivingEntityRenderer<? extends Player, ? extends EntityModel<? extends Player>> livingEntityRenderer = addLayersEvent.getSkin(s);
+                if(livingEntityRenderer instanceof PlayerRenderer playerRenderer){
+                    playerRenderer.addLayer(new NetheriteElytraLayer(playerRenderer, entityModels));
+                }
+            });
+            LivingEntityRenderer<ArmorStand, ? extends EntityModel<ArmorStand>> livingEntityRenderer = addLayersEvent.getRenderer(EntityType.ARMOR_STAND);
+            if(livingEntityRenderer instanceof ArmorStandRenderer armorStandRenderer){
+                armorStandRenderer.addLayer(new NetheriteElytraArmorStandLayer(armorStandRenderer, entityModels));
+            }
+
+        }
+    }
 
     public WizardryDelight()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::onClientSetup);
+        if(FMLEnvironment.dist.isClient()) modEventBus.addListener(this::registerElytraLayer);
         // Register the commonSetup method for modloading
         // Register the Deferred Register to the mod event bus so items get registered
         ITEMS.register(modEventBus);
@@ -112,7 +148,11 @@ public class WizardryDelight
     {
 
     }
-
+    private void onClientSetup(FMLClientSetupEvent event) {
+        // broken Property
+        ItemProperties.register(MAG_ELITRA.get(), new ResourceLocation(MODID, "broken"),
+                (stack, arg1, arg2, arg3) -> ModElytra.isUseable(stack) ? 0 : 1);
+    }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
@@ -120,7 +160,8 @@ public class WizardryDelight
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-
+            ItemProperties.register(WizardryDelight.MAG_ELITRA.get(), new ResourceLocation(MODID, "broken"),
+                    (stack, arg1, arg2, arg3) -> ModElytra.isUseable(stack) ? 0 : 1);
             event.enqueueWork(() -> {
                 ComposterBlock.COMPOSTABLES.put(InitItems.MEADOW_GOLDEN_FLOWER.get(), 0.2f);
                 ComposterBlock.COMPOSTABLES.put(InitItems.ROSE_OF_GHOSTY_TEARS.get(), 0.2f);
@@ -142,5 +183,6 @@ public class WizardryDelight
 
             });
         }
+
     }
 }
