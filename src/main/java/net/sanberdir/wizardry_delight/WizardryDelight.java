@@ -244,6 +244,10 @@ public class WizardryDelight
                 ComposterBlock.COMPOSTABLES.put(InitItems.APPLE_SAPLING.get(), 0.2f);
                 ComposterBlock.COMPOSTABLES.put(InitItems.SPATIAL_ORCHID.get(), 0.2f);
                 ComposterBlock.COMPOSTABLES.put(InitItems.WARPED_WART.get(), 0.2f);
+                ComposterBlock.COMPOSTABLES.put(InitItems.COASTAL_STEEP_FLOWER.get(), 0.2f);
+                ComposterBlock.COMPOSTABLES.put(InitItems.COASTAL_STEEP_FIBERS.get(), 0.2f);
+                ComposterBlock.COMPOSTABLES.put(InitItems.COASTAL_STEEP.get(), 0.2f);
+                ComposterBlock.COMPOSTABLES.put(InitItems.MEDICAL_POTATO.get(), 0.2f);
 
                 BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                         InitItems.WARPED_WART.get(), Potions.AWKWARD));

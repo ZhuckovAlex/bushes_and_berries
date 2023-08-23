@@ -29,6 +29,8 @@ public class InitItems {
                     .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 1F)
                     .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 200, 0), 1F)
                     .build()))));
+    public static final RegistryObject<Item> COASTAL_STEEP = ITEMS.register("coastal_steep",
+            () -> new ItemNameBlockItem(InitBlocks.COASTAL_STEEP.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES))));
     public static final RegistryObject<Item> FREEZE_BERRIES = ITEMS.register("freeze_berries",
             () -> new ItemNameBlockItem(InitBlocks.FREEZE_BERRIES.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(1).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 0), 1F)
@@ -164,6 +166,8 @@ public class InitItems {
     public static final RegistryObject<Item> COASTAL_STEEP_FLOWER = ITEMS.register("coastal_steep_flower",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
+
+
     public static final RegistryObject<Item> KRUTNEVY_BREAD = ITEMS.register("krutnevy_bread",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
 
@@ -191,7 +195,15 @@ public class InitItems {
                     .effect(new MobEffectInstance(MobEffects.HEAL, 1, 0), 1F)
                     .build())));
 
-   public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
+    public static final RegistryObject<Item> MUSHROOM_ON_STICK = ITEMS.register("mushroom_on_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(2).saturationMod(0.3f).alwaysEat()
+                    .build())));
+    public static final RegistryObject<Item> COCKED_MEDICAL_POTATO = ITEMS.register("cocked_mushroom_on_stick",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).alwaysEat()
+                    .build())));
+
+
+    public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> ROBIN_STICK = ITEMS.register("robin_stick",

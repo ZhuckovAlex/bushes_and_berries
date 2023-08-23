@@ -141,7 +141,7 @@ public class ModChestBoatEntity extends ChestBoat {
         switch(this.getModChestBoatType()) {
             case APPLE:
             default:
-                return ModEntitiesItem.APPLE_BOAT;
+                return ModEntitiesItem.APPLE_CHEST_BOAT;
         }
     }
 }
