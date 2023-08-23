@@ -10,7 +10,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 
 public class ModWDEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS
-            = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, WizardryDelight.MODID);
+            = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, WizardryDelight.MOD_ID);
 
     public static final RegistryObject<MobEffect> TASTY_FOOD = MOB_EFFECTS.register("tasty_food",
             () -> new EffectTastyFood(MobEffectCategory.HARMFUL, 550077));

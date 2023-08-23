@@ -9,7 +9,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 
 public class InitPaintings {
     public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS =
-            DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, WizardryDelight.MODID);
+            DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, WizardryDelight.MOD_ID);
 
     public static final RegistryObject<PaintingVariant> LANDSCAPE_LAKE = PAINTING_VARIANTS.register("landscape_lake",
             () -> new PaintingVariant(64, 64));

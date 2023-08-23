@@ -17,10 +17,9 @@ import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticles;
 import net.sanberdir.wizardry_delight.particle.custom.StombleRoseParticles;
-import software.bernie.geckolib3.item.GeoArmorItem;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
-@Mod.EventBusSubscriber(modid = WizardryDelight.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = WizardryDelight.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents {
     @SubscribeEvent
     public static void registerArmorRenderers(final EntityRenderersEvent.AddLayers event) {

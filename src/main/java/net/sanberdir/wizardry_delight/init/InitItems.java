@@ -11,19 +11,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.WizardryDelight;
-import net.sanberdir.wizardry_delight.entity.custom.CustomBoat;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, WizardryDelight.MODID);
+            DeferredRegister.create(ForgeRegistries.ITEMS, WizardryDelight.MOD_ID);
 
     public static final RegistryObject<Item> BLACK_BERRIES = ITEMS.register("black_berries",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.HARM, 10, 0), 1F)
                     .build())));
+
     public static final RegistryObject<Item> YADOGA = ITEMS.register("yadoga",
             () -> new ItemNameBlockItem(InitBlocks.YADOGA.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 1F)
@@ -141,16 +141,16 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(8).saturationMod(0.81f)
                             .build())));
-    public static final RegistryObject<Item>  SLICING_FROM_RAW_BEAR_MEET = ITEMS.register("slicing_from_raw_bear_meat",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f)
-                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
-                    .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
-                    .build())));
-
-    public static final RegistryObject<Item> SLICING_FROM_COCKED_BEAR_MEET = ITEMS.register("slicing_from_cocked_bear_meat",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.81f)
-                            .build())));
+//    public static final RegistryObject<Item>  SLICING_FROM_RAW_BEAR_MEET = ITEMS.register("slicing_from_raw_bear_meat",
+//            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f)
+//                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
+//                    .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
+//                    .build())));
+//
+//    public static final RegistryObject<Item> SLICING_FROM_COCKED_BEAR_MEET = ITEMS.register("slicing_from_cocked_bear_meat",
+//            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
+//                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.81f)
+//                            .build())));
 
     public static final RegistryObject<Item> SWEET_JAM = ITEMS.register("sweet_jam",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7f)
@@ -186,8 +186,10 @@ public class InitItems {
     public static final RegistryObject<Item> WARPED_BONE_MEAL = ITEMS.register("warped_bone_meal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
-    public static final RegistryObject<Item> APPLE_BOAT = ITEMS.register("apple_boat",
-            () -> new ModBoatItem(false, CustomBoat.TypeMod.APPLE, new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+    public static final RegistryObject<Item> MEDICAL_POTATO = ITEMS.register("medical_potato",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).alwaysEat()
+                    .effect(new MobEffectInstance(MobEffects.HEAL, 1, 0), 1F)
+                    .build())));
 
    public static final RegistryObject<Item> STRANGE_SCRAP = ITEMS.register("strange_scrap",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

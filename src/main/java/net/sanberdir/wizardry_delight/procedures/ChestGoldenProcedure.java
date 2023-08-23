@@ -86,13 +86,6 @@ public class ChestGoldenProcedure {
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
             }
-            if (Math.random() < 0.5) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get());
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 1));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-            }
         }
     }
 }

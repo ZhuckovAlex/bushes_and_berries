@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 
 public class InitBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, WizardryDelight.MODID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, WizardryDelight.MOD_ID);
 
 // Растения
     public static final RegistryObject<Block> DRYER = registerBlockWithoutBlockItem("dryer",

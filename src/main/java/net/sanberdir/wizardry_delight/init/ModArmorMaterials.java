@@ -61,7 +61,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     public String getName() {
-        return WizardryDelight.MODID + ":" + this.name;
+        return WizardryDelight.MOD_ID + ":" + this.name;
     }
 
     public float getToughness() {

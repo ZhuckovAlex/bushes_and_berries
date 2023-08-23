@@ -12,7 +12,7 @@ import net.sanberdir.wizardry_delight.init.InitBlocks;
 import java.util.List;
 public class ModPlacedFeatures {
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
-            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, WizardryDelight.MODID);
+            DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, WizardryDelight.MOD_ID);
 
     // Кусты
     public static final RegistryObject<PlacedFeature> CHARNIKA_PLACED = PLACED_FEATURES.register("charnika_placed",

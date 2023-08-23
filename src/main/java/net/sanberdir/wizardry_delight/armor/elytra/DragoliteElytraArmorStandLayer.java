@@ -13,7 +13,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 
 @OnlyIn(Dist.CLIENT)
 public class DragoliteElytraArmorStandLayer extends ElytraLayer<ArmorStand, ArmorStandArmorModel> {
-    private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MODID,
+    private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MOD_ID,
             "textures/entity/nezydra.png");
 
     public DragoliteElytraArmorStandLayer(ArmorStandRenderer armorStandRenderer,

@@ -15,7 +15,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 public class DragoliteElytraLayer
         extends ElytraLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
 
-    private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MODID,
+    private static final ResourceLocation TEXTURE_ELYTRA = new ResourceLocation(WizardryDelight.MOD_ID,
             "textures/entity/nezydra.png");
 
     public DragoliteElytraLayer(

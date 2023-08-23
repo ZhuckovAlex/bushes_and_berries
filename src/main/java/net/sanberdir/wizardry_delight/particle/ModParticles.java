@@ -10,7 +10,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 
 public class ModParticles {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES =
-            DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, WizardryDelight.MODID);
+            DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, WizardryDelight.MOD_ID);
 
     public static final RegistryObject<SimpleParticleType> ROBIN_STAR_PARTICLES =
             PARTICLE_TYPES.register("robin_star_particles", () -> new SimpleParticleType(true));
