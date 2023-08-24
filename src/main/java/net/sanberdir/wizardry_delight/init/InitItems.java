@@ -186,9 +186,9 @@ public class InitItems {
             () -> new RingSupply(new Item.Properties().stacksTo(1).durability(40).tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> CRIMSON_BONE_MEAL = ITEMS.register("crimson_bone_meal",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new AnimateItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> WARPED_BONE_MEAL = ITEMS.register("warped_bone_meal",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new AnimateItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> MEDICAL_POTATO = ITEMS.register("medical_potato",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(5).saturationMod(0.6f).alwaysEat()

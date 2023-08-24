@@ -42,6 +42,8 @@ import net.minecraftforge.registries.RegisterEvent;
 import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraArmorStandLayer;
 import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraLayer;
+import net.sanberdir.wizardry_delight.custom_recipes.BetterBrewingRecipe;
+import net.sanberdir.wizardry_delight.custom_recipes.BetterBrewingRecipe2;
 import net.sanberdir.wizardry_delight.entity.EntityTypeInitializer;
 import net.sanberdir.wizardry_delight.entity.boat.ModBoatRenderer;
 import net.sanberdir.wizardry_delight.entity.boat.ModEntityData;

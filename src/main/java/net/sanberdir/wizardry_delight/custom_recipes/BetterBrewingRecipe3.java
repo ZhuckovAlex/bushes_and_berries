@@ -1,4 +1,4 @@
-package net.sanberdir.wizardry_delight;
+package net.sanberdir.wizardry_delight.custom_recipes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -6,12 +6,12 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraftforge.common.brewing.IBrewingRecipe;
 
-public class BetterBrewingRecipe implements IBrewingRecipe {
-    private final Potion input;
+public class BetterBrewingRecipe3 implements IBrewingRecipe {
+    private final Item input;
     private final Item ingredient;
-    private final Potion output;
+    private final Item output;
 
-    public BetterBrewingRecipe(Potion input, Item ingredient, Potion output) {
+    public BetterBrewingRecipe3(Item input, Item ingredient, Item output) {
         this.input = input;
         this.ingredient = ingredient;
         this.output = output;
@@ -19,7 +19,7 @@ public class BetterBrewingRecipe implements IBrewingRecipe {
 
     @Override
     public boolean isInput(ItemStack input) {
-        return PotionUtils.getPotion(input) == this.input;
+        return input.getItem()  == this.input;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class BetterBrewingRecipe implements IBrewingRecipe {
 
         ItemStack itemStack = new ItemStack(input.getItem());
         itemStack.setTag(new CompoundTag());
-        PotionUtils.setPotion(itemStack, this.output);
-        return itemStack;
+        ItemStack itemStack1 = new ItemStack(output.asItem());
+        return itemStack1;
     }
 }
