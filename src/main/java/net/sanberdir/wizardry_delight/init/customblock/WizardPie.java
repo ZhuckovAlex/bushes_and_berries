@@ -39,21 +39,7 @@ public class WizardPie extends CakeBlock {
     }
     public InteractionResult use(BlockState p_51202_, Level p_51203_, BlockPos p_51204_, Player p_51205_, InteractionHand p_51206_, BlockHitResult p_51207_) {
         ItemStack itemstack = p_51205_.getItemInHand(p_51206_);
-        Item item = itemstack.getItem();
-        if (itemstack.is(ItemTags.CANDLES) && p_51202_.getValue(BITES) == 0) {
-            Block block = Block.byItem(item);
-            if (block instanceof CandleBlock) {
-                if (!p_51205_.isCreative()) {
-                    itemstack.shrink(1);
-                }
-
-                p_51203_.playSound((Player)null, p_51204_, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                p_51203_.setBlockAndUpdate(p_51204_, CandleCakeBlock.byCandle(block));
-                p_51203_.gameEvent(p_51205_, GameEvent.BLOCK_CHANGE, p_51204_);
-                p_51205_.awardStat(Stats.ITEM_USED.get(item));
-                return InteractionResult.SUCCESS;
-            }
-        }
+        p_51203_.playSound((Player)null, p_51204_, SoundEvents.GENERIC_EAT, SoundSource.BLOCKS, 1.0F, 1.0F);
 
         if (p_51203_.isClientSide) {
             if (eat(p_51203_, p_51204_, p_51202_, p_51205_).consumesAction()) {

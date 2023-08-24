@@ -269,7 +269,7 @@ public class InitItems {
                             .effect(new MobEffectInstance(MobEffects.LEVITATION, 800, 5), 1F)
                             .build())));
     public static final RegistryObject<Item> HEALING_DEW = ITEMS.register("healing_dew",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new AnimateItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> A_DROP_OF_LOVE = ITEMS.register("a_drop_of_love",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 

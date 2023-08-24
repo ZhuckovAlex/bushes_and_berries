@@ -15,44 +15,30 @@ public class ModTrades {
     @SubscribeEvent
     public static void registerWanderingTrades(WandererTradesEvent event) {
         event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(Items.EMERALD, 15),
+                .add(new BasicItemListing(new ItemStack(Items.EMERALD, 20),
                 new ItemStack(InitItems.SILVERAN.get()), 20, 10, 0f));
-
         event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.SILVERAN.get(), 1),
-                new ItemStack(Items.EMERALD, 8), 10, 10, 0f));
+                .add(new BasicItemListing(new ItemStack(Items.EMERALD, 25),
+                        new ItemStack(InitItems.SILVERAN.get()), 20, 10, 0f));
+        event.getGenericTrades()
+                .add(new BasicItemListing(new ItemStack(Items.EMERALD, 35),
+                        new ItemStack(InitItems.HAT_HELMET_CLEAR.get()), 5, 30, 0f));
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 30),
                         new ItemStack(InitItems.HAT_HELMET_CLEAR.get()), 5, 30, 0f));
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 30),
                         new ItemStack(InitItems.SILVERAN.get()), 20, 10, 0f));
-
-        event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.SILVERAN.get(), 1),
-                        new ItemStack(Items.EMERALD, 12), 10, 10, 0f));
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 45),
                         new ItemStack(InitItems.HAT_HELMET_CLEAR.get()), 5, 30, 0f));
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 35),
                         new ItemStack(InitItems.SILVERAN.get()), 20, 10, 0f));
-
-        event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.SILVERAN.get(), 1),
-                        new ItemStack(Items.EMERALD, 9), 10, 10, 0f));
         event.getGenericTrades()
                 .add(new BasicItemListing(new ItemStack(Items.EMERALD, 40),
                         new ItemStack(InitItems.HAT_HELMET_CLEAR.get()), 5, 30, 0f));
 
-        event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
-                        new ItemStack(Items.EMERALD, 10), 10, 10, 0f));
-        event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
-                        new ItemStack(Items.EMERALD, 12), 10, 10, 0f));
-        event.getGenericTrades()
-                .add(new BasicItemListing(new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get(), 1),
-                        new ItemStack(Items.EMERALD, 15), 10, 10, 0f));
+
     }
 }
