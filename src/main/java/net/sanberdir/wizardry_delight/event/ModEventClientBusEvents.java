@@ -16,6 +16,7 @@ import net.sanberdir.wizardry_delight.init.customitem.ClearHatArmorItem;
 import net.sanberdir.wizardry_delight.init.customitem.HatArmorItem;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticles;
+import net.sanberdir.wizardry_delight.particle.custom.RobinStarsParticlesProjectile;
 import net.sanberdir.wizardry_delight.particle.custom.StombleRoseParticles;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
@@ -37,6 +38,9 @@ public class ModEventClientBusEvents {
         public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
             Minecraft.getInstance().particleEngine.register(ModParticles.ROBIN_STAR_PARTICLES.get(),
                     RobinStarsParticles.Provider::new);
+
+            Minecraft.getInstance().particleEngine.register(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(),
+                    RobinStarsParticlesProjectile.Provider::new);
 
             Minecraft.getInstance().particleEngine.register(ModParticles.STOMBLE_ROSE.get(),
                     StombleRoseParticles.Provider::new);

@@ -91,7 +91,7 @@ public class HitByEntity {
                 }
              }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Pig.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -103,7 +103,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -158,7 +158,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Cow.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -170,7 +170,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
         if (!(entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Horse.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -225,7 +225,7 @@ public class HitByEntity {
             }
 
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Horse.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -237,7 +237,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -278,7 +278,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(PolarBear.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -290,7 +290,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -345,7 +345,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Chicken.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -357,7 +357,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
         if (!(entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Bee.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -464,7 +464,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Sheep.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -476,7 +476,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -517,7 +517,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Goat.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -529,7 +529,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -606,7 +606,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Rabbit.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -618,7 +618,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
         if (!world.getEntitiesOfClass(Cod.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -658,7 +658,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
         if (!world.getEntitiesOfClass(Squid.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
@@ -697,7 +697,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
         if (!world.getEntitiesOfClass(Creeper.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -725,7 +725,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
         if (!world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
@@ -753,7 +753,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -796,7 +796,7 @@ public class HitByEntity {
 
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -846,7 +846,7 @@ public class HitByEntity {
 
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -887,7 +887,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -928,7 +928,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(MushroomCow.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -940,7 +940,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -981,7 +981,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         } else if ((entity instanceof LivingEntity _livEnt ? _livEnt.isBaby() : false) && !world.getEntitiesOfClass(Hoglin.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
             if (!entity.level.isClientSide())
                 entity.discard();
@@ -993,7 +993,7 @@ public class HitByEntity {
                 }
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 
@@ -1030,7 +1030,7 @@ public class HitByEntity {
                         entity.getName().getString(), entity.getDisplayName(), entity.level.getServer(), entity), "kill");
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
         }
 
 

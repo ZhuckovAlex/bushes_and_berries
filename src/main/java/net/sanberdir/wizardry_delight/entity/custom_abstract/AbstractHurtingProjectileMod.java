@@ -1,6 +1,7 @@
 package net.sanberdir.wizardry_delight.entity.custom_abstract;
 
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.protocol.Packet;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
@@ -62,7 +64,7 @@ public class AbstractHurtingProjectileMod extends Projectile {
         if (this.level.isClientSide || (entity == null || !entity.isRemoved()) && this.level.hasChunkAt(this.blockPosition())) {
             super.tick();
             if (this.shouldBurn()) {
-                this.setSecondsOnFire(1);
+                execute(level,getX(),getY(),getZ());
             }
 
             HitResult hitresult = ProjectileUtil.getHitResult(this, this::canHitEntity);
@@ -99,15 +101,18 @@ public class AbstractHurtingProjectileMod extends Projectile {
     }
 
     protected boolean shouldBurn() {
-        return false;
+        return true;
     }
 
     protected ParticleOptions getTrailParticle() {
-        return ModParticles.ROBIN_STAR_PARTICLES.get();
+        return ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get();
     }
 
     protected float getInertia() {
         return 0.95F;
+    }
+    public static void execute(LevelAccessor world, double x, double y, double z) {
+        world.addParticle(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 0, 0, 0);
     }
 
     public void addAdditionalSaveData(CompoundTag p_36848_) {

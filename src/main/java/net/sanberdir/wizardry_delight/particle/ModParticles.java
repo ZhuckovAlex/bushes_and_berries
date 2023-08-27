@@ -14,6 +14,8 @@ public class ModParticles {
 
     public static final RegistryObject<SimpleParticleType> ROBIN_STAR_PARTICLES =
             PARTICLE_TYPES.register("robin_star_particles", () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> ROBIN_STAR_PARTICLES_PROJECTILE =
+            PARTICLE_TYPES.register("robin_star_particles_projectile", () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> STOMBLE_ROSE =
             PARTICLE_TYPES.register("stomble_rose", () -> new SimpleParticleType(true));
 

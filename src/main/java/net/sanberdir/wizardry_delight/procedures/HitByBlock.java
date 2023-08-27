@@ -57,7 +57,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -84,7 +84,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -110,7 +110,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -136,7 +136,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -171,7 +171,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -196,7 +196,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -221,7 +221,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -247,7 +247,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -273,7 +273,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -297,7 +297,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ParticleTypes.HAPPY_VILLAGER, x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -345,7 +345,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -379,7 +379,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -414,7 +414,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -449,7 +449,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -484,7 +484,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -519,7 +519,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -553,7 +553,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -587,7 +587,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -621,7 +621,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -649,7 +649,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -685,7 +685,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -721,7 +721,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -757,7 +757,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -793,7 +793,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -829,7 +829,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -865,7 +865,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -902,7 +902,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -943,7 +943,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -985,7 +985,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
@@ -1014,7 +1014,7 @@ public class HitByBlock {
                     world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
             }
             if (world instanceof ServerLevel _level)
-                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES.get(), x, y, z, 10, 1, 1, 1, 0.2f);
+                _level.sendParticles(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), x, y, z, 36, 0.5, 0.5, 0.5, 0.05f);
             if (Math.random() < 0.15) {
                 if (world instanceof Level _level && !_level.isClientSide()) {
                     ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.SPARKLING_POLLEN.get()));
