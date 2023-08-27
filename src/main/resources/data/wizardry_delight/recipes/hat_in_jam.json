@@ -3,7 +3,7 @@
   "group": "hat_helmet",
   "ingredients": [
     {
-      "tag": "wizardry_delight:jams"
+      "item": "wizardry_delight:glowing_jam"
     },
     {
       "item": "wizardry_delight:hat_helmet_clear"

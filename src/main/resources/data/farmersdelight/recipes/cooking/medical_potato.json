@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 300,
-  "experience": 20.0,
+  "cookingtime": 400,
+  "experience": 0.50,
   "ingredients": [
     {
       "item": "minecraft:poisonous_potato"

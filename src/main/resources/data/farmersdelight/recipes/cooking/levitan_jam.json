@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
-  "experience": 5.0,
+  "cookingtime": 2400,
+  "experience": 3.0,
   "container": {
     "item": "wizardry_delight:jar"
   },

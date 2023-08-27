@@ -43,7 +43,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraArmorStandLayer;
 import net.sanberdir.wizardry_delight.armor.elytra.DragoliteElytraLayer;
 import net.sanberdir.wizardry_delight.custom_recipes.BetterBrewingRecipe;
-import net.sanberdir.wizardry_delight.custom_recipes.BetterBrewingRecipe2;
 import net.sanberdir.wizardry_delight.entity.EntityTypeInitializer;
 import net.sanberdir.wizardry_delight.entity.boat.ModBoatRenderer;
 import net.sanberdir.wizardry_delight.entity.boat.ModEntityData;
@@ -68,7 +67,6 @@ import net.sanberdir.wizardry_delight.world.feature.ModPlacedFeatures;
 import software.bernie.geckolib3.GeckoLib;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -108,7 +106,7 @@ public class WizardryDelight
 
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
-        InitPaintings.register(modEventBus);
+
         ModEntities.register(modEventBus);
         ModWDEffects.register(modEventBus);
         CustomSoundEvents.register(modEventBus);
@@ -253,10 +251,7 @@ public class WizardryDelight
 
                 BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.WATER,
                         InitItems.WARPED_WART.get(), Potions.AWKWARD));
-
-                BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe2(Potions.WATER,
-                        Items.COCOA_BEANS, ModItems.HOT_COCOA.get()));
-
+                
             });
         }
 

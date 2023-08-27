@@ -169,7 +169,7 @@ public class InitItems {
 
 
     public static final RegistryObject<Item> KRUTNEVY_BREAD = ITEMS.register("krutnevy_bread",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
+            () -> new KrutnevyBread(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5F).build())));
 
 
     public static final RegistryObject<Item> SUGAR_REFINED = ITEMS.register("sugar_refined",
@@ -210,14 +210,14 @@ public class InitItems {
             () -> new StarBallItem(new Item.Properties().durability(70).tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> RAPIER = ITEMS.register("rapier",
-            () -> new SwordItem(Tiers.NETHERITE, -2,-1.8f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new SwordItem(Tiers.NETHERITE, -2,-1.6f,new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> CLEAR_DRAGOLIT_NUGGET = ITEMS.register("clear_dragolit_nugget",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> DRAGOLIT_INGOT = ITEMS.register("dragolit_ingot",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> SILVERAN = ITEMS.register("silveran",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new Silveran(new Item.Properties().durability(25).tab(ModCreativeModeTab.BUSHES)));
 
 
     public static final RegistryObject<Item> WIZARDRY_DELIGHT_JAM = ITEMS.register("wizardry_delight_jam",
@@ -264,9 +264,9 @@ public class InitItems {
     public static final RegistryObject<Item> LEVITAN_JAM = ITEMS.register("levitan_jam",
             () -> new JamMod(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
                     .food(new FoodProperties.Builder().nutrition(20).saturationMod(0.5f).alwaysEat().fast()
-                            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 2400, 0), 1F)
-                            .effect(new MobEffectInstance(MobEffects.JUMP, 2000, 1), 1F)
-                            .effect(new MobEffectInstance(MobEffects.LEVITATION, 800, 5), 1F)
+                            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 400, 0), 1F)
+                            .effect(new MobEffectInstance(MobEffects.JUMP, 400, 1), 1F)
+                            .effect(new MobEffectInstance(MobEffects.LEVITATION, 180, 5), 1F)
                             .build())));
     public static final RegistryObject<Item> HEALING_DEW = ITEMS.register("healing_dew",
             () -> new AnimateItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

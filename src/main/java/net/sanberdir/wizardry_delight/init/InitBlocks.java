@@ -28,6 +28,8 @@ public class InitBlocks {
 // Растения
     public static final RegistryObject<Block> DRYER = registerBlockWithoutBlockItem("dryer",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion()));
+    public static final RegistryObject<Block> SUGAR_SACK = registerBlock("sugar_sack",
+            () -> new FacingBlock(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.WOOL).noOcclusion()), ModCreativeModeTab.BUSHES);
 
     public static final RegistryObject<Block> COASTAL_STEEP = registerBlockWithoutBlockItem("coastal_steep",
             () -> new CoastalSteepBlock(BlockBehaviour.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()));
@@ -104,7 +106,7 @@ public class InitBlocks {
                     .sound(SoundType.WOOD)), ModCreativeModeTab.BUSHES);
 
     public static final RegistryObject<Block> A_BLOCK_OF_SPARKING_POLLEN = registerBlock("a_block_of_sparkling_pollen",
-            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).strength(0.2F, 20)
+            () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND).strength(0.2F, 30)
                     .sound(SoundType.SAND)), ModCreativeModeTab.BUSHES);
 
 

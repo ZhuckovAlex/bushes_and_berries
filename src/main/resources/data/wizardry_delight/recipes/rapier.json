@@ -8,13 +8,16 @@
     "B": {
       "item": "minecraft:stick"
     },
+    "C": {
+      "item": "wizardry_delight:sparkling_pollen"
+    },
     "#": {
       "item": "wizardry_delight:dragolit_ingot"
     }
   },
   "pattern": [
-    "  #",
-    "A# ",
+    " C#",
+    "A#C",
     "BA "
   ],
   "result": {

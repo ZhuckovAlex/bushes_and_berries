@@ -11,10 +11,10 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    HAT("hat", 28, new int[]{3, 5, 8, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
-            3.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET.get())),
-    HAT_CLEAR("hat", 28, new int[]{3, 5, 8, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
-            3.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET_CLEAR.get())),
+    HAT("hat", 28, new int[]{2, 5, 8, 2}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
+            0.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET.get())),
+    HAT_CLEAR("hat_clear", 28, new int[]{2, 5, 8, 2}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
+            0.0F, 0.0F, () -> Ingredient.of(InitItems.HAT_HELMET_CLEAR.get())),
     ELITRA("elitra", 28, new int[]{3, 7, 6, 3}, 30, SoundEvents.ARMOR_EQUIP_LEATHER,
             3.0F, 0.0F, () -> Ingredient.of(WizardryDelight.MAG_ELITRA.get()));
 
