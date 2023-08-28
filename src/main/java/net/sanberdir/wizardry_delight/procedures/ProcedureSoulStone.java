@@ -1,5 +1,6 @@
 package net.sanberdir.wizardry_delight.procedures;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -61,7 +62,7 @@ public class ProcedureSoulStone {
                     _player.getInventory().setChanged();
             }
 
-            if (Math.random() < 0.15) {
+            if (Math.random() < 0.13) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Bee(EntityType.BEE, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -70,7 +71,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.11) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Axolotl(EntityType.AXOLOTL, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -79,7 +80,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.14) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Wolf(EntityType.WOLF, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -88,7 +89,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.15) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Goat(EntityType.GOAT, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -97,7 +98,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.03) {
+            else if (Math.random() < 0.3) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Cat(EntityType.CAT, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -106,16 +107,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.03) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Wolf(EntityType.WOLF, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            if (Math.random() < 0.03) {
+            else if (Math.random() < 0.03) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Creeper(EntityType.CREEPER, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -124,7 +116,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.03) {
+            else if (Math.random() < 0.04) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Stray(EntityType.STRAY, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -133,7 +125,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.1) {
+            else if (Math.random() < 0.40) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Fox(EntityType.FOX, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -142,7 +134,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.35) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Horse(EntityType.HORSE, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -151,16 +143,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Goat(EntityType.GOAT, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            if (Math.random() < 0.15) {
+            else if (Math.random() < 0.30) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Cow(EntityType.COW, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -169,7 +152,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.2) {
+            else if (Math.random() < 0.25) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Chicken(EntityType.CHICKEN, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -178,7 +161,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.20) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Pig(EntityType.PIG, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -187,7 +170,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.025) {
+            else if (Math.random() < 0.15) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Frog(EntityType.FROG, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -196,7 +179,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.05) {
+            else if (Math.random() < 0.1) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Sheep(EntityType.SHEEP, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -205,7 +188,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.01) {
+            else if (Math.random() < 0.01) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Ravager(EntityType.RAVAGER, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -214,7 +197,7 @@ public class ProcedureSoulStone {
                     world.addFreshEntity(entityToSpawn);
                 }
             }
-            if (Math.random() < 0.005) {
+            else if (Math.random() < 0.005) {
                 if (world instanceof ServerLevel _level) {
                     Entity entityToSpawn = new Warden(EntityType.WARDEN, _level);
                     entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
@@ -222,6 +205,16 @@ public class ProcedureSoulStone {
                         _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
                     world.addFreshEntity(entityToSpawn);
                 }
+            }
+            else {
+                if (world instanceof ServerLevel _level) {
+                Entity entityToSpawn = new Llama(EntityType.LLAMA, _level);
+                entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
+                if (entityToSpawn instanceof Mob _mobToSpawn)
+                    _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+                world.addFreshEntity(entityToSpawn);
+            }
+
             }
         }
     }

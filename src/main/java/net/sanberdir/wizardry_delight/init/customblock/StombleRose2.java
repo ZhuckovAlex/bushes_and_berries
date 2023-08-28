@@ -81,10 +81,10 @@ public class StombleRose2 extends Block implements net.minecraftforge.common.IPl
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
-
+        WizardryDelight.queueServerWork(140, () -> {
                StombleRoseDeactive.execute(world, x, y, z);
-
-        world.scheduleTick(pos, this, 100);
+        });
+        world.scheduleTick(pos, this, 1);
     }
 
 
