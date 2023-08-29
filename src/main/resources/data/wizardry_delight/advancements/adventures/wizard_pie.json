@@ -1,12 +1,12 @@
 {
-  "parent": "wizardry_delight:adventures/adventures_magic_cook",
+  "parent": "wizardry_delight:adventures/droping_love",
   "criteria": {
-    "strange_scrap": {
+    "wizard_pie": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wizardry_delight:strange_scrap"
+              "wizardry_delight:wizard_pie"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.adventures.strange_scrap.description"
+      "translate": "advancements.adventures.wizard_pie.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "wizardry_delight:strange_scrap"
+      "item": "wizardry_delight:wizard_pie"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.adventures.strange_scrap.title"
+      "translate": "advancements.adventures.wizard_pie.title"
     }
   },
   "requirements": [
     [
-      "strange_scrap"
+      "wizard_pie"
     ]
   ]
 }

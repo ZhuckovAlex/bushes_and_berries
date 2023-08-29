@@ -1,12 +1,12 @@
 {
   "parent": "wizardry_delight:adventures/adventures_magic_cook",
   "criteria": {
-    "strange_scrap": {
+    "sparkling_pollen": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wizardry_delight:strange_scrap"
+              "wizardry_delight:sparkling_pollen"
             ]
           }
         ]
@@ -17,21 +17,25 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.adventures.strange_scrap.description"
+      "translate": "advancements.adventures.sparkling_pollen.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "wizardry_delight:strange_scrap"
+      "item": "wizardry_delight:sparkling_pollen"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.adventures.strange_scrap.title"
+      "translate": "advancements.adventures.sparkling_pollen.title"
     }
   },
   "requirements": [
     [
-      "strange_scrap"
+      "sparkling_pollen"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 800
+  }
+
 }

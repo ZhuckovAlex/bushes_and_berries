@@ -1,12 +1,12 @@
 {
-  "parent": "wizardry_delight:adventures/adventures_magic_cook",
+  "parent": "wizardry_delight:adventures/end_a",
   "criteria": {
-    "strange_scrap": {
+    "robin_stick": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wizardry_delight:strange_scrap"
+              "wizardry_delight:robin_stick"
             ]
           }
         ]
@@ -17,21 +17,25 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.adventures.strange_scrap.description"
+      "translate": "advancements.adventures.robin_stick.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "wizardry_delight:strange_scrap"
+      "item": "wizardry_delight:robin_stick"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.adventures.strange_scrap.title"
+      "translate": "advancements.adventures.robin_stick.title"
     }
   },
   "requirements": [
     [
-      "strange_scrap"
+      "robin_stick"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 800
+  }
+
 }

@@ -1,12 +1,12 @@
 {
   "parent": "wizardry_delight:adventures/adventures_magic_cook",
   "criteria": {
-    "strange_scrap": {
+    "hat_helmet_clear": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wizardry_delight:strange_scrap"
+              "wizardry_delight:hat_helmet_clear"
             ]
           }
         ]
@@ -17,21 +17,25 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.adventures.strange_scrap.description"
+      "translate": "advancements.adventures.hat_helmet_clear.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "wizardry_delight:strange_scrap"
+      "item": "wizardry_delight:hat_helmet_clear"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.adventures.strange_scrap.title"
+      "translate": "advancements.adventures.hat_helmet_clear.title"
     }
   },
   "requirements": [
     [
-      "strange_scrap"
+      "hat_helmet_clear"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 800
+  }
+
 }

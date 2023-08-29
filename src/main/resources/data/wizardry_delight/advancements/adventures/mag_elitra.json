@@ -1,12 +1,12 @@
 {
-  "parent": "wizardry_delight:adventures/adventures_magic_cook",
+  "parent": "wizardry_delight:adventures/end_a",
   "criteria": {
-    "strange_scrap": {
+    "mag_elitra": {
       "conditions": {
         "items": [
           {
             "items": [
-              "wizardry_delight:strange_scrap"
+              "wizardry_delight:mag_elitra"
             ]
           }
         ]
@@ -17,21 +17,25 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.adventures.strange_scrap.description"
+      "translate": "advancements.adventures.mag_elitra.description"
     },
-    "frame": "task",
+    "frame": "challenge",
     "hidden": false,
     "icon": {
-      "item": "wizardry_delight:strange_scrap"
+      "item": "wizardry_delight:mag_elitra"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.adventures.strange_scrap.title"
+      "translate": "advancements.adventures.mag_elitra.title"
     }
   },
   "requirements": [
     [
-      "strange_scrap"
+      "mag_elitra"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 800
+  }
+
 }
