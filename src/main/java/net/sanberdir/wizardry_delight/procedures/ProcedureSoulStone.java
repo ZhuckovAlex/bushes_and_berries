@@ -1,7 +1,12 @@
 package net.sanberdir.wizardry_delight.procedures;
+import net.minecraft.commands.CommandSource;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.horse.Llama;
+import net.minecraft.world.phys.Vec2;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -28,25 +33,24 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.init.InitItems;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
 @Mod.EventBusSubscriber
 
 public class ProcedureSoulStone {
-    @SubscribeEvent
-    public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-        if (event.getHand() != event.getEntity().getUsedItemHand())
-            return;
-        execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
-    }
+
 
     public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-        execute(null, world, x, y, z, entity);
-    }
-
-    private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
         if (entity == null)
             return;
+        double particleRadius = 0;
+        double particleAmount = 0;
+
         if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.SOUL_STONE_CHARGED.get()) {
+            if (world instanceof ServerLevel _level)
+                _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                        ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+
             if (entity instanceof LivingEntity _entity) {
                 ItemStack _setstack = new ItemStack(WizardryDelight.SOUL_STONE_DISCHARGED.get());
                 _setstack.setCount(1);
@@ -54,160 +58,9 @@ public class ProcedureSoulStone {
                 if (_entity instanceof Player _player)
                     _player.getInventory().setChanged();
             }
-            if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Sheep(EntityType.SHEEP, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.15) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Fox(EntityType.FOX, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Horse(EntityType.HORSE, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.15) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Cat(EntityType.CAT, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Cow(EntityType.COW, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Chicken(EntityType.CHICKEN, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Pig(EntityType.PIG, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.15) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Goat(EntityType.GOAT, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.15) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Frog(EntityType.FROG, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.10) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new IronGolem(EntityType.IRON_GOLEM, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Wolf(EntityType.WOLF, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.30) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Bee(EntityType.BEE, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.09) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Stray(EntityType.STRAY, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.09) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Creeper(EntityType.CREEPER, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.09) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Ravager(EntityType.RAVAGER, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else if (Math.random() < 0.04) {
-                if (world instanceof ServerLevel _level) {
-                    Entity entityToSpawn = new Warden(EntityType.WARDEN, _level);
-                    entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                    if (entityToSpawn instanceof Mob _mobToSpawn)
-                        _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                    world.addFreshEntity(entityToSpawn);
-                }
-            }
-            else {
-                if (world instanceof ServerLevel _level) {
-                Entity entityToSpawn = new Llama(EntityType.LLAMA, _level);
-                entityToSpawn.moveTo(x, y, z, world.getRandom().nextFloat() * 360F, 0);
-                if (entityToSpawn instanceof Mob _mobToSpawn)
-                    _mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-                world.addFreshEntity(entityToSpawn);
-            }
 
-            }
+
+
+        }
         }
     }
-}

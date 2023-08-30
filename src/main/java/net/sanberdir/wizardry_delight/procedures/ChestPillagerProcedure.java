@@ -43,55 +43,230 @@ public class ChestPillagerProcedure {
             }
             if (entity instanceof Player _player)
                 _player.giveExperiencePoints(50);
-            if (Math.random() < 0.3) {
+            if (Math.random() < 0.35) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Blocks.COBWEB);
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 4));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 4));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
+                if (Math.random() < 0.5) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.ARROW);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EMERALD);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.1) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
             }
-            if (Math.random() < 0.2) {
+           else if (Math.random() < 0.25) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 5));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.COBWEB);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.ARROW);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EMERALD);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.1) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
             }
-            if (Math.random() < 0.4) {
+           else if (Math.random() < 0.4) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.ARROW);
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 5, 25));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
-            }
-            if (Math.random() < 0.15) {
+                if (Math.random() < 0.5) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.COBWEB);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EMERALD);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.4) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.1) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+           }
+           else if (Math.random() < 0.15) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.EMERALD);
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 3));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
-            }
-            if (Math.random() < 0.15) {
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.COBWEB);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.ARROW);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.3) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+           }
+           else if (Math.random() < 0.15) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 10));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
-            }
-            if (Math.random() < 0.05) {
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.9) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.COBWEB);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.ARROW);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.7) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+                if (Math.random() < 0.3) {
+                    if (entity instanceof Player _player) {
+                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
+                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
+                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                    }
+                }
+           }
+           else if (Math.random() < 0.05) {
                 if (entity instanceof Player _player) {
                     ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 1));
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
-            }
-            if (Math.random() < 0.08) {
+           }
+            else {
                 if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(InitItems.WIZARDRY_DELIGHT_JAM.get());
-                    _setstack.setCount((int) Mth.nextDouble(RandomSource.create(), 1, 1));
+                    ItemStack _setstack = new ItemStack(Items.ARROW);
+                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
                     ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
                 }
-            }
+           }
         }
     }
 }

@@ -51,15 +51,13 @@ import net.sanberdir.wizardry_delight.entity.chest_boat.ModChestBoatRenderer;
 import net.sanberdir.wizardry_delight.entity.sign.ModBlockEntities;
 import net.sanberdir.wizardry_delight.init.*;
 
-import net.sanberdir.wizardry_delight.init.customblock.AppleSign;
-import net.sanberdir.wizardry_delight.init.customblock.AppleWallSign;
-import net.sanberdir.wizardry_delight.init.customblock.ModEntitiesBlock;
-import net.sanberdir.wizardry_delight.init.customblock.ModWoodType;
+import net.sanberdir.wizardry_delight.init.customblock.*;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 
 import net.sanberdir.wizardry_delight.init.customitem.AppleBoat;
 import net.sanberdir.wizardry_delight.init.customitem.AppleChestBoat;
 import net.sanberdir.wizardry_delight.init.customitem.ModElytra;
+import net.sanberdir.wizardry_delight.init.customitem.SoulStoneDeactive;
 import net.sanberdir.wizardry_delight.particle.ModParticles;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
 import net.sanberdir.wizardry_delight.world.feature.ModConfiguredFeatures;
@@ -85,7 +83,7 @@ public class WizardryDelight
     // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
     public static final Logger LOGGER = LogManager.getLogger();
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-    public static final RegistryObject<Item> SOUL_STONE_DISCHARGED = ITEMS.register("soul_stone_discharged", () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
+    public static final RegistryObject<Item> SOUL_STONE_DISCHARGED = ITEMS.register("soul_stone_discharged", () -> new SoulStoneDeactive(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.BUSHES)));
     public static final RegistryObject<Item> MAG_ELITRA =  ITEMS.register("mag_elitra", () ->new ModElytra(ModArmorMaterials.ELITRA, EquipmentSlot.CHEST, new Item.Properties().durability(1200).tab(ModCreativeModeTab.BUSHES).fireResistant()));
 
     // Directly reference a slf4j logger
@@ -106,7 +104,7 @@ public class WizardryDelight
 
         InitItems.register(modEventBus);
         InitBlocks.register(modEventBus);
-
+        WDBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModWDEffects.register(modEventBus);
         CustomSoundEvents.register(modEventBus);
