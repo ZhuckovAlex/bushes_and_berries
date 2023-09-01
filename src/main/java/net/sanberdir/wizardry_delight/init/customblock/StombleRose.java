@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -17,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.PlantType;
 import net.sanberdir.wizardry_delight.procedures.StombleRoseActive;
 
 public class StombleRose extends Block implements net.minecraftforge.common.IPlantable {
@@ -25,6 +27,8 @@ public class StombleRose extends Block implements net.minecraftforge.common.IPla
     public StombleRose(Properties p_49795_) {
         super(p_49795_);
     }
+
+
     public boolean canSurvive(BlockState p_57175_, LevelReader p_57176_, BlockPos p_57177_) {
         BlockState soil = p_57176_.getBlockState(p_57177_.below());
 
@@ -42,7 +46,7 @@ public class StombleRose extends Block implements net.minecraftforge.common.IPla
     }
     @Override
     public net.minecraftforge.common.PlantType getPlantType(BlockGetter world, BlockPos pos) {
-        return null;
+        return PlantType.NETHER;
     }
     public void animateTick(BlockState p_222687_, Level p_222688_, BlockPos p_222689_, RandomSource p_222690_) {
         VoxelShape voxelshape = this.getShape(p_222687_, p_222688_, p_222689_, CollisionContext.empty());

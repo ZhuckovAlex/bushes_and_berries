@@ -23,6 +23,14 @@ public class InitItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
                     .effect(new MobEffectInstance(MobEffects.HARM, 10, 0), 1F)
                     .build())));
+    public static final RegistryObject<Item> ROAST_GOAT_MEAT_WITH_FREEZE_BERRIES = ITEMS.register("roast_goat_meat_with_freeze_berries_syrup",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
+                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 120, 0), 1F)
+                    .build())));
+    public static final RegistryObject<Item> BEAR_NEAT_SOUP = ITEMS.register("bear_meat_soup",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
+                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 120, 0), 1F)
+                    .build())));
 
     public static final RegistryObject<Item> YADOGA = ITEMS.register("yadoga",
             () -> new ItemNameBlockItem(InitBlocks.YADOGA.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
@@ -277,7 +285,7 @@ public class InitItems {
             () -> new StarBallItem(new Item.Properties()));
 
     public static final RegistryObject<Item> THE_PILLAGERS_CHEST = ITEMS.register("the_pillagers_chest",
-            () -> new SneakItem(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));
 
     public static final RegistryObject<Item> GOLDEN_CHEST_KING_PILLAGER = ITEMS.register("golden_chest_king_pillager",
             () -> new SneakItemGold(new Item.Properties().tab(ModCreativeModeTab.BUSHES)));

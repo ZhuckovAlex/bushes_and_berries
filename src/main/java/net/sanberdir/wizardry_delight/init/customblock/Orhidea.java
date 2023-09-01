@@ -5,6 +5,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
@@ -21,6 +22,11 @@ public class Orhidea extends Block implements net.minecraftforge.common.IPlantab
     public Orhidea(Properties p_49795_) {
         super(p_49795_);
     }
+    @Override
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return context.getItemInHand().getItem() != this.asItem();
+    }
+
     public boolean canSurvive(BlockState p_57175_, LevelReader p_57176_, BlockPos p_57177_) {
         BlockState soil = p_57176_.getBlockState(p_57177_.below());
 

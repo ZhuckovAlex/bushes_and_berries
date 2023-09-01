@@ -1,5 +1,8 @@
 package net.sanberdir.wizardry_delight.procedures;
 
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,255 +21,103 @@ import net.sanberdir.wizardry_delight.init.InitItems;
 
 import javax.annotation.Nullable;
 
-//@Mod.EventBusSubscriber
-
+@Mod.EventBusSubscriber
 public class ChestPillagerProcedure {
-//    @SubscribeEvent
-//    public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
-//        if (event.getHand() != event.getEntity().getUsedItemHand())
-//            return;
-//        execute(event, event.getEntity());
-//    }
-
-    public static void execute(Entity entity) {
-        execute(null, entity);
+    @SubscribeEvent
+    public static void onRightClickItem(PlayerInteractEvent.RightClickItem event) {
+        if (event.getHand() != event.getEntity().getUsedItemHand())
+            return;
+        execute(event, event.getLevel(), event.getPos().getX(), event.getPos().getY(), event.getPos().getZ(), event.getEntity());
     }
 
-    private static void execute(@Nullable Event event, Entity entity) {
+    public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+        execute(null, world, x, y, z, entity);
+    }
+
+    private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+
         if (entity == null)
             return;
-        if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.THE_PILLAGERS_CHEST.get()
-                && !((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == InitItems.THE_PILLAGERS_CHEST.get())) {
-            if (entity instanceof Player _player) {
-                ItemStack _stktoremove = new ItemStack(InitItems.THE_PILLAGERS_CHEST.get());
-                _player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
-            }
-            if (entity instanceof Player _player)
-                _player.giveExperiencePoints(50);
-            if (Math.random() < 0.35) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Blocks.COBWEB);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 4));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+        if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.THE_PILLAGERS_CHEST.get()) {
+            ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).shrink(1);
+            if (Math.random() < 0.20) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COBWEB, 3));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.5) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+            } else if (Math.random() < 0.25) {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.BONE,4));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.ARROW);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ARROW, 5));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EMERALD);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.5)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT,2));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.5)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT,3));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.1) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.30)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COAL,4));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-            }
-           else if (Math.random() < 0.25) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.1)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.CHEESE.get(),3));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.COBWEB);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+            } else if (Math.random() < 0.30) {
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.45)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT,4));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.ARROW);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.IRON_INGOT));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EMERALD);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.COAL,5));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.05)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.CHEESE.get(),3));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
-                if (Math.random() < 0.1) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
+            } else if (Math.random() < 0.15) {
+                if ((world instanceof Level _level && !_level.isClientSide())&&(Math.random() < 0.30)) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.CHEESE.get(),3));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(InitItems.CHEESE.get()));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
+                }
+            } else {
+                if (world instanceof Level _level && !_level.isClientSide()) {
+                    ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ARROW, 5));
+                    entityToSpawn.setPickUpDelay(10);
+                    _level.addFreshEntity(entityToSpawn);
                 }
             }
-           else if (Math.random() < 0.4) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Items.ARROW);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-                if (Math.random() < 0.5) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.COBWEB);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EMERALD);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.4) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.1) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-           }
-           else if (Math.random() < 0.15) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Items.EMERALD);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.COBWEB);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.ARROW);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.3) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-           }
-           else if (Math.random() < 0.15) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.RAW_IRON);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 5));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.9) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.COBWEB);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 5, 25));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.ARROW);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.7) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE);
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 10));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-                if (Math.random() < 0.3) {
-                    if (entity instanceof Player _player) {
-                        ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                        _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                        ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                    }
-                }
-           }
-           else if (Math.random() < 0.05) {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(InitItems.CHEESE.get());
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 1));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-           }
-            else {
-                if (entity instanceof Player _player) {
-                    ItemStack _setstack = new ItemStack(Items.ARROW);
-                    _setstack.setCount((int) Mth.nextInt(RandomSource.create(), 1, 3));
-                    ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-                }
-           }
         }
+
+
     }
 }

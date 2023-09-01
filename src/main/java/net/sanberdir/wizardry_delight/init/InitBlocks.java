@@ -28,6 +28,14 @@ public class InitBlocks {
 // Растения
     public static final RegistryObject<Block> DRYER = registerBlockWithoutBlockItem("dryer",
             () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).sound(SoundType.WOOD).noOcclusion()));
+
+    public static final RegistryObject<Block> DRAGOLIT_GRID = registerBlock("dragolit_grid",
+            () -> new IronBarsBlock(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(2.5F).noOcclusion()),ModCreativeModeTab.BUSHES);
+    public static final RegistryObject<Block> DRAGOLIT_BLOCK = registerBlock("dragolit_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(5).noOcclusion()),ModCreativeModeTab.BUSHES);
+    public static final RegistryObject<Block> WD_SPAWNER = registerBlock("wd_spawner",
+            () -> new WDSpawner(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE)
+                    .noOcclusion().strength(4F).explosionResistance(20F).randomTicks()), ModCreativeModeTab.BUSHES);
     public static final RegistryObject<Block> SUGAR_SACK = registerBlock("sugar_sack",
             () -> new FacingBlock(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.WOOL).noOcclusion()), ModCreativeModeTab.BUSHES);
 

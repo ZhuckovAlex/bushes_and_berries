@@ -95,24 +95,8 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "wizardry_delight:soul_stone_charged",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 2.0,
-                "min": 1.0
-              },
-              "function": "minecraft:set_count"
-            }
-          ],
           "name": "wizardry_delight:soul_stone_discharged",
-          "weight": 2
+          "weight": 5
         },
         {
           "type": "minecraft:item",

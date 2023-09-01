@@ -35,6 +35,11 @@ public class CoastalSteepBlock extends MangrovePropaguleBlock  {
         super(p_57318_);
     }
     @Override
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return context.getItemInHand().getItem() != this.asItem();
+    }
+
+    @Override
     public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Shapes.empty();
     }

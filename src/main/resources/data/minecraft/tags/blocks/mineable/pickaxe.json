@@ -1,5 +1,8 @@
 {
   "values": [
-    "wizardry_delight:strange_chip"
+    "wizardry_delight:strange_chip",
+    "wizardry_delight:dragolit_grid",
+    "wizardry_delight:dragolit_block",
+    "wizardry_delight:wd_spawner"
   ]
 }

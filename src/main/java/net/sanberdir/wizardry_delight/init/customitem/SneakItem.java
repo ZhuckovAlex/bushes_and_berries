@@ -18,16 +18,16 @@ public class SneakItem extends Item{
         super(p_41383_);
     }
 
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
-        InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-        ItemStack itemstack = ar.getObject();
-        double x = entity.getX();
-        double y = entity.getY();
-        double z = entity.getZ();
-
-        ChestPillagerProcedure.execute(entity);
-        return ar;
-    }
+//    @Override
+//    public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
+//        InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
+//        ItemStack itemstack = ar.getObject();
+//        double x = entity.getX();
+//        double y = entity.getY();
+//        double z = entity.getZ();
+//
+//        ChestPillagerProcedure.execute(entity);
+//        return ar;
+//    }
 
 }

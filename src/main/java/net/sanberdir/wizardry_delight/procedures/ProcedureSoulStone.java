@@ -1,12 +1,15 @@
 package net.sanberdir.wizardry_delight.procedures;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.IPlantable;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -47,10 +50,46 @@ public class ProcedureSoulStone {
         double particleAmount = 0;
 
         if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InitItems.SOUL_STONE_CHARGED.get()) {
-            if (world instanceof ServerLevel _level)
-                _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-                        ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
-
+            if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.PLAINS : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+           else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.NETHER : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.DESERT : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.CAVE : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.CROP : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.WATER : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else if (world.getBlockState(new BlockPos(x, y, z)).getBlock() instanceof IPlantable _plant ? _plant.getPlantType(world, new BlockPos(x, y, z)) == PlantType.BEACH : false) {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
+            else {
+                if (world instanceof ServerLevel _level)
+                    _level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x + 0.5, y + 1, z + 0.5), Vec2.MIN, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+                            ("summon " + ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("entity"))));
+            }
             if (entity instanceof LivingEntity _entity) {
                 ItemStack _setstack = new ItemStack(WizardryDelight.SOUL_STONE_DISCHARGED.get());
                 _setstack.setCount(1);
