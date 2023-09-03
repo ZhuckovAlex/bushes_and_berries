@@ -14,6 +14,7 @@ import net.sanberdir.wizardry_delight.WizardryDelight;
 import net.sanberdir.wizardry_delight.init.customeffect.ModWDEffects;
 import net.sanberdir.wizardry_delight.init.customitem.*;
 import net.sanberdir.wizardry_delight.sounds.CustomSoundEvents;
+import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class InitItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -24,13 +25,26 @@ public class InitItems {
                     .effect(new MobEffectInstance(MobEffects.HARM, 10, 0), 1F)
                     .build())));
     public static final RegistryObject<Item> ROAST_GOAT_MEAT_WITH_FREEZE_BERRIES = ITEMS.register("roast_goat_meat_with_freeze_berries_syrup",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
-                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 120, 0), 1F)
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(12).saturationMod(0.6f)
+                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 900, 0), 1F)
                     .build())));
     public static final RegistryObject<Item> BEAR_NEAT_SOUP = ITEMS.register("bear_meat_soup",
-            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
-                    .effect(new MobEffectInstance(ModWDEffects.TASTY_FOOD.get(), 120, 0), 1F)
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(7).saturationMod(0.4f)
+                    .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 1200, 0), 1F)
                     .build())));
+    public static final RegistryObject<Item> SPAGHETTI_IN_THE_NORTH = ITEMS.register("spaghetti_in_the_north",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f)
+                    .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 900, 0), 1F)
+                    .build())));
+    public static final RegistryObject<Item> GOULASH_WITH_GOAT_MEAT = ITEMS.register("goulash_with_goat_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(6).saturationMod(0.8f)
+                    .effect(new MobEffectInstance(ModEffects.COMFORT.get(), 900, 0), 1F)
+                    .build())));
+    public static final RegistryObject<Item> HOT_COCOA_WITH_SPARKING_POLLEN = ITEMS.register("hot_cocoa_with_sparkling_pollen",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(8).saturationMod(0.5f)
+                    .effect(new MobEffectInstance(MobEffects.REGENERATION, 80, 3), 1F)
+                    .build())));
+
 
     public static final RegistryObject<Item> YADOGA = ITEMS.register("yadoga",
             () -> new ItemNameBlockItem(InitBlocks.YADOGA.get(),(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.5f).alwaysEat().fast()
@@ -156,10 +170,17 @@ public class InitItems {
 //                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
 //                    .effect(new MobEffectInstance(MobEffects.POISON, 80, 0), 0.02F)
 //                    .build())));
+        public static final RegistryObject<Item>  RAW_SLICING_GOATS_MEET = ITEMS.register("raw_slising_goats_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(1).saturationMod(0.3f)
+                    .effect(new MobEffectInstance(MobEffects.CONFUSION, 80, 0), 0.2F)
+                    .build())));
+    public static final RegistryObject<Item>  COCKED_SLICING_GOATS_MEET = ITEMS.register("cocked_slising_goats_meat",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES).food(new FoodProperties.Builder().nutrition(4).saturationMod(0.6f)
+                    .build())));
 //
 //    public static final RegistryObject<Item> SLICING_FROM_COCKED_BEAR_MEET = ITEMS.register("slicing_from_cocked_bear_meat",
 //            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.BUSHES)
-//                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.81f)
+//                    .food(new FoodProperties.Builder().nutrition(4).saturationMod(0.8f)
 //                            .build())));
 
     public static final RegistryObject<Item> SWEET_JAM = ITEMS.register("sweet_jam",

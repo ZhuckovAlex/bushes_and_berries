@@ -21,7 +21,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.sanberdir.wizardry_delight.entity.boat.ModBoatRenderer;
 import net.sanberdir.wizardry_delight.entity.boat.ModEntityData;
-import net.sanberdir.wizardry_delight.entity.chest_boat.ModChestBoatEntity;
 import net.sanberdir.wizardry_delight.entity.chest_boat.ModChestBoatRenderer;
 import net.sanberdir.wizardry_delight.entity.sign.ModBlockEntities;
 import net.sanberdir.wizardry_delight.init.customblock.ModWoodType;
@@ -97,8 +96,11 @@ public class ClientOnlyRegistrar {
         @SubscribeEvent
         public static void onEntityRendererRegistry(final EntityRenderersEvent.RegisterRenderers registerEntityEvent) {
             registerEntityEvent.registerEntityRenderer(ModEntityData.MOD_BOAT_DATA, ModBoatRenderer::new);
+
+
             registerEntityEvent.registerEntityRenderer(ModEntityData.MOD_CHEST_BOAT_DATA, ModChestBoatRenderer::new);
             registerEntityEvent.registerBlockEntityRenderer(ModBlockEntities.SIGN_ENTITY_TYPE, SignRenderer::new);
+
         }
         /**
          * Used to register new layers to existing entity renderers into the game using the mod event bus

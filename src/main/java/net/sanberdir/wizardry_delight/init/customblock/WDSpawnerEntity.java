@@ -25,6 +25,8 @@ import java.util.stream.IntStream;
 
 
 public class WDSpawnerEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+
+
         private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
         private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 

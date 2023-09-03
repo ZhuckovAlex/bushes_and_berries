@@ -5,6 +5,7 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -49,6 +50,7 @@ import net.sanberdir.wizardry_delight.entity.sign.ModBlockEntities;
 import net.sanberdir.wizardry_delight.init.InitBlocks;
 import net.sanberdir.wizardry_delight.init.InitItems;
 import net.sanberdir.wizardry_delight.init.ModBlockStateProperties;
+import net.sanberdir.wizardry_delight.particle.ModParticles;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -56,6 +58,7 @@ import java.util.List;
 import java.util.Map;
 
 public class WDSpawner extends FacingBlock implements EntityBlock {
+
     public WDSpawner(Properties p_49795_) {
         super(p_49795_);
         this.registerDefaultState(this.stateDefinition.any().setValue(POLLEN, Integer.valueOf(0)));
@@ -182,6 +185,44 @@ public class WDSpawner extends FacingBlock implements EntityBlock {
         }
 
     @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource source) {
+        super.animateTick(state, level, pos, source);
+
+        if (state.getValue(SOUL_STONES) == 2) {
+            if (source.nextInt(100) == 0) {
+                level.playSound((Player)null, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundEvents.RESPAWN_ANCHOR_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+
+            double d0 = (double)pos.getX() + 0.5D + (0.5D - source.nextDouble());
+            double d1 = (double)pos.getY() + 0.3D;
+            double d2 = (double)pos.getZ() + 0.5D + (0.5D - source.nextDouble());
+            double d3 = (double)source.nextFloat() * 0.04D;
+            level.addParticle(ParticleTypes.SOUL_FIRE_FLAME, d0, d1, d2, 0.0D, d3, 0.0D);
+        }
+        if (state.getValue(POLLEN) > 0) {
+            if (source.nextInt(100) == 0) {
+                level.playSound((Player)null, (double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, SoundEvents.RESPAWN_ANCHOR_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
+            }
+
+            double d0 = (double)pos.getX() + 0.5D + (0.5D - source.nextDouble());
+            double d1 = (double)pos.getY() + 1D;
+            double d2 = (double)pos.getZ() + 0.5D + (0.5D - source.nextDouble());
+            double d3 = (double)source.nextFloat() * 0.04D;
+            level.addParticle(ModParticles.ROBIN_STAR_PARTICLES_PROJECTILE.get(), d0, d1, d2, 0.0D, d3, 0.0D);
+        }
+    }
+
+    @Override
+    public void tick(BlockState p_222945_, ServerLevel level, BlockPos pos, RandomSource p_222948_) {
+        super.tick(p_222945_, level, pos, p_222948_);
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+
+
+    }
+
+    @Override
     public void randomTick(BlockState state, ServerLevel serverLevel, BlockPos pos, RandomSource randomSource) {
         Player entity = Minecraft.getInstance().player;
         int x = pos.getX();
@@ -190,7 +231,6 @@ public class WDSpawner extends FacingBlock implements EntityBlock {
 
         if ((sumBePollen(state))&&(canBeSoulStones2(state))) {
             summonEntity(serverLevel,x, y, z,pos,state,serverLevel);
-
         }
     }
 

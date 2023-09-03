@@ -3,7 +3,7 @@
   "cookingtime": 600,
   "experience": 0.35,
   "ingredient": {
-    "item": "wizardry_delight:mushroom_on_stick"
+    "item": "minecraft:mushroom_on_stick"
   },
   "result": "wizardry_delight:cocked_mushroom_on_stick"
 }
